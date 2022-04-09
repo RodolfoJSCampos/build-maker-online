@@ -1,5 +1,4 @@
 /* START OF STYLE RESET */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -48,7 +47,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 /* END OF STYLE RESET */
 
 body {
@@ -85,7 +83,7 @@ body {
     background: #171717;
     border: 1px;
     border-style: solid;
-    border-color: gray;
+    border-color: rgb(50, 50, 50);
 }
 
 .charImage {
@@ -94,15 +92,55 @@ body {
 }
 
 .equipment {
+    background: #171717;
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
     width: 250px;
     height: 80px;
     border: 1px;
     border-style: solid;
-    border-color: gray;
+    border-color: rgb(50, 50, 50);
+}
+
+.equipImg {
+    height: 80px;
+    width: auto;
+    object-fit: cover;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+    border-style: ridge;
 }
 
 .middleEquipments {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+}
+
+.equipText {
+    padding-left: 5px;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    font-family: sans-serif;
+    font-size: large;
+    margin-right: 10px;
+}
+
+.equipName {
+    font-size: larger;
+    color: rgb(176, 52, 176);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(31, 181, 31);
 }
