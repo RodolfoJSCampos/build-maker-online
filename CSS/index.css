@@ -74,6 +74,26 @@ body {
     filter: grayscale(100%)
 }
 
+.dropSource:hover {
+    height: 185px;
+    margin: 6px;
+    filter: none;
+    -webkit-box-shadow: 0px 0px 7px 0px rgb(255, 255, 255);
+    -moz-box-shadow: 0px 0px 7px 0px rgb(255, 255, 255);
+    box-shadow: 0px 0px 7px 0px rgb(255, 255, 255);
+}
+
+/*  GLOW EFFECT FOR TEXT
+.textSource:hover {
+    color: white;
+    text-shadow:0px 0px 30px white;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+*/
+
 .equipPicker {
     display: flex;
     justify-content: center;
@@ -103,9 +123,18 @@ body {
     border-color: rgb(50, 50, 50);
 }
 
+.equipImgContainer {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
 .equipImg {
     height: 80px;
     width: auto;
+    position: relative;
+    top: 0;
+    left: 0;
     object-fit: cover;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -113,6 +142,28 @@ body {
     border: 2px solid;
     border-color: rgb(0, 0, 0);
     border-style: ridge;
+}
+
+.equipImg:hover {
+    border-color: white;
+    -webkit-box-shadow: 0px 0px 7px 0px rgb(255, 255, 255);
+    -moz-box-shadow: 0px 0px 7px 0px rgb(255, 255, 255);
+    box-shadow: 0px 0px 7px 0px rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.equipImg:hover + .addImg {
+    visibility: visible;
+    opacity: 75%;
+    cursor: pointer;
+}
+
+.addImg {
+    visibility: hidden;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    pointer-events: none
 }
 
 .middleEquipments {
