@@ -1,6 +1,7 @@
 window.onscroll = function() {scrollFunction()};
 const dropSourceBarList = document.querySelectorAll('.dropSourceBar');
 const dropSourceList = document.querySelectorAll('.dropSource');
+const dropSourceText = document.querySelectorAll('.dropSourceText');
 
 $(document).ready(function(){ 
     $('#dropSourceDungeonId').click(function(){
@@ -8,6 +9,7 @@ $(document).ready(function(){
         document.getElementById("dropSourceDungeonId").style.borderColor = "white";
         document.getElementById("dropSourceDungeonId").style.borderStyle = "ridge";
         document.getElementById("dropSourceDungeonId").style.filter = "grayscale(0%)";
+        document.getElementById("dropSourceTextDungeonId").style.color = "white";
     });
 
     $('#dropSourceRaideId').click(function(){
@@ -15,6 +17,7 @@ $(document).ready(function(){
         document.getElementById("dropSourceRaideId").style.borderColor = "white";
         document.getElementById("dropSourceRaideId").style.borderStyle = "ridge";
         document.getElementById("dropSourceRaideId").style.filter = "grayscale(0%)";
+        document.getElementById("dropSourceTextRaideId").style.color = "white";
     }); 
 
     $('#dropSourcePvpId').click(function(){
@@ -22,6 +25,7 @@ $(document).ready(function(){
         document.getElementById("dropSourcePvpId").style.borderColor = "white";
         document.getElementById("dropSourcePvpId").style.borderStyle = "ridge";
         document.getElementById("dropSourcePvpId").style.filter = "grayscale(0%)";
+        document.getElementById("dropSourceTextPvpId").style.color = "white";
     }); 
 
     $('#dropSourceProfessionId').click(function(){
@@ -29,6 +33,7 @@ $(document).ready(function(){
         document.getElementById("dropSourceProfessionId").style.borderColor = "white";
         document.getElementById("dropSourceProfessionId").style.borderStyle = "ridge";
         document.getElementById("dropSourceProfessionId").style.filter = "grayscale(0%)";
+        document.getElementById("dropSourceTextProfessionId").style.color = "white";
     }); 
 });
 
@@ -44,6 +49,10 @@ function scrollFunction() {
         dropSource.style.height = "50px";
     });
 
+    dropSourceText.forEach(dropSourceText => {
+        dropSourceText.style.top = "30%";
+    });
+
   } else {
     dropSourceBarList.forEach(dropSourceBar => {
         dropSourceBar.style.top= "40px";
@@ -53,6 +62,10 @@ function scrollFunction() {
     dropSourceList.forEach(dropSource => {
         dropSource.style.maxHeight = "185px";
         dropSource.style.height = "175px";
+    });
+
+    dropSourceText.forEach(dropSourceText => {
+        dropSourceText.style.top = "40%";
     });
   }
 }
