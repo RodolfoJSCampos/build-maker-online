@@ -84,7 +84,7 @@ img.dropSource{
 .dropSourceFrame {
     position: relative;
     height: 205px;
-    width: 339px;
+    min-width: 339px;
     text-align: center;
     top: 0;
     left: 0;
@@ -312,11 +312,11 @@ img.dropSource{
 /* Modal Content/Box */
 .modal-content {
     background-color: #1e1e1e;
-    margin: 2% auto; /* 15% from the top and centered */
+    margin: 5% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 800px; /* Could be more or less, depending on screen size */
-    height: 800px;
+    height: 600px;
 }
   
 /* The Close Button */

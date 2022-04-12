@@ -4,17 +4,20 @@ const dropSourceList = document.querySelectorAll('.dropSource');
 const dropSourceText = document.querySelectorAll('.dropSourceText');
 const btnAddEquipment = document.querySelectorAll('.equipImgContainer');
 const dropSourceBarById = document.getElementById("dropSourceBarId");
-var modal = document.getElementById("equipmentModal");
 var modalClose = document.getElementsByClassName("close")[0];
 var bodyTag = document.getElementsByTagName("body")[0];
+var modal = document.getElementById("equipmentModal");
+var dungeonSourceClicked, raideSourceClicked, pvpSourceClicked, professionSourceClicked = false;
 
 $(document).ready(function(){ 
     $('#dropSourceDungeonId').click(function(){
-        if(document.getElementById("dropSourceDungeonId").style.filter == "grayscale(0%)"){
+        if(dungeonSourceClicked == true){
+            dungeonSourceClicked = false;
             document.getElementById("dropSourceDungeonId").style.border = "0px";
             document.getElementById("dropSourceDungeonId").style.filter = "grayscale(100%)";
             document.getElementById("dropSourceTextDungeonId").style.color = "grey";
         } else {
+            dungeonSourceClicked = true;
             document.getElementById("dropSourceDungeonId").style.border = "5px solid";
             document.getElementById("dropSourceDungeonId").style.borderColor = "white";
             document.getElementById("dropSourceDungeonId").style.borderStyle = "ridge";
@@ -24,11 +27,13 @@ $(document).ready(function(){
     });
 
     $('#dropSourceRaideId').click(function(){
-        if(document.getElementById("dropSourceRaideId").style.filter == "grayscale(0%)"){
+        if(raideSourceClicked == true){
+            raideSourceClicked = false;
             document.getElementById("dropSourceRaideId").style.border = "0px";
             document.getElementById("dropSourceRaideId").style.filter = "grayscale(100%)";
             document.getElementById("dropSourceTextRaideId").style.color = "grey";
         } else {
+            raideSourceClicked = true;
             document.getElementById("dropSourceRaideId").style.border = "5px solid";
             document.getElementById("dropSourceRaideId").style.borderColor = "white";
             document.getElementById("dropSourceRaideId").style.borderStyle = "ridge";
@@ -38,11 +43,13 @@ $(document).ready(function(){
     }); 
 
     $('#dropSourcePvpId').click(function(){
-        if(document.getElementById("dropSourcePvpId").style.filter == "grayscale(0%)"){
+        if(pvpSourceClicked == true){
+            pvpSourceClicked = false;
             document.getElementById("dropSourcePvpId").style.border = "0px";
             document.getElementById("dropSourcePvpId").style.filter = "grayscale(100%)";
             document.getElementById("dropSourceTextPvpId").style.color = "grey";
         } else {
+            pvpSourceClicked = true;
             document.getElementById("dropSourcePvpId").style.border = "5px solid";
             document.getElementById("dropSourcePvpId").style.borderColor = "white";
             document.getElementById("dropSourcePvpId").style.borderStyle = "ridge";
@@ -52,11 +59,13 @@ $(document).ready(function(){
     }); 
 
     $('#dropSourceProfessionId').click(function(){
-        if(document.getElementById("dropSourceProfessionId").style.filter == "grayscale(0%)"){
+        if(professionSourceClicked == true){
+            professionSourceClicked = false;
             document.getElementById("dropSourceProfessionId").style.border = "0px";
             document.getElementById("dropSourceProfessionId").style.filter = "grayscale(100%)";
             document.getElementById("dropSourceTextProfessionId").style.color = "grey";
         } else {
+            professionSourceClicked = true;
             document.getElementById("dropSourceProfessionId").style.border = "5px solid";
             document.getElementById("dropSourceProfessionId").style.borderColor = "white";
             document.getElementById("dropSourceProfessionId").style.borderStyle = "ridge";
