@@ -45,12 +45,12 @@ function scrollFunction() {
     });
 
     dropSourceList.forEach(dropSource => {
-        dropSource.style.maxHeight = "60px";
-        dropSource.style.height = "50px";
+        dropSource.classList.remove('dropSource','dropSourceSmall');
+        dropSource.classList.add('dropSourceSmall');
     });
 
     dropSourceText.forEach(dropSourceText => {
-        dropSourceText.style.top = "30%";
+        dropSourceText.style.top = "43%";
     });
 
   } else {
@@ -60,8 +60,8 @@ function scrollFunction() {
     });
 
     dropSourceList.forEach(dropSource => {
-        dropSource.style.maxHeight = "185px";
-        dropSource.style.height = "175px";
+        dropSource.classList.remove('dropSource','dropSourceSmall');
+        dropSource.classList.add('dropSource');
     });
 
     dropSourceText.forEach(dropSourceText => {
