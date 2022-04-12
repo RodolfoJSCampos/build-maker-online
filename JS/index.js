@@ -77,7 +77,7 @@ $(document).ready(function(){
     $(btnAddEquipment).click(function(){
         modal.style.display = "block";
         bodyTag.style.overflowY = "hidden";
-        bodyTag.style.paddingRight = "18px";
+        bodyTag.style.marginRight = "18px";
         dropSourceBarById.style.right = "8px";
         dropSourceBarById.style.transition = "0s";
     });
@@ -85,7 +85,7 @@ $(document).ready(function(){
     $(modalClose).click(function(){
         modal.style.display = "none";
         bodyTag.style.overflowY = "auto";
-        bodyTag.style.paddingRight = "0px";
+        bodyTag.style.marginRight = "0px";
         dropSourceBarById.style.right = "0px";
         setTimeout(function() {
             dropSourceBarById.style.transition = "0.4s";
@@ -96,7 +96,7 @@ $(document).ready(function(){
         if (event.target == modal) {
             modal.style.display = "none";
             bodyTag.style.overflowY = "auto";
-            bodyTag.style.right = "0px";
+            bodyTag.style.marginRight = "0px";
             dropSourceBarById.style.right = "0px";
             setTimeout(function() {
                 dropSourceBarById.style.transition = "0.4s";
