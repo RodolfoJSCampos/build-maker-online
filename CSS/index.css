@@ -74,7 +74,7 @@ body {
     overflow: hidden;
     position: fixed;
     top: 40px;
-    z-index: 99;
+    z-index: 98;
 }
 
 img.dropSource{
@@ -142,8 +142,8 @@ img.dropSource{
 
 
 .dropSource:hover + .dropSourceText {
-    color: white;
-    text-shadow: 0 0 30px rgb(255,255,255);
+    color: white !important;
+    text-shadow: 0 0 30px rgb(255,255,255) !important;
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
@@ -151,8 +151,8 @@ img.dropSource{
 }
 
 .dropSourceSmall:hover + .dropSourceText {
-    color: white;
-    text-shadow: 0 0 30px rgb(255,255,255);
+    color: white !important;
+    text-shadow: 0 0 30px rgb(255,255,255) !important;
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
     -webkit-transition: all 0.2s ease-in;
@@ -165,7 +165,7 @@ img.dropSource{
     background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.85) 50%, rgba(255,255,255,0) 100%);
     text-align: center;
-    top: 40%;
+    top: 42.5%;
     left: 4.5%;
     font-family: sans-serif;
     font-weight: 700;
@@ -295,4 +295,43 @@ img.dropSource{
     height: 1080px;
     width: auto;
     background-color: #1e1e1e;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 99; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+  
+/* Modal Content/Box */
+.modal-content {
+    background-color: #1e1e1e;
+    margin: 2% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 800px; /* Could be more or less, depending on screen size */
+    height: 800px;
+}
+  
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

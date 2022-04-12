@@ -2,39 +2,98 @@ window.onscroll = function() {scrollFunction()};
 const dropSourceBarList = document.querySelectorAll('.dropSourceBar');
 const dropSourceList = document.querySelectorAll('.dropSource');
 const dropSourceText = document.querySelectorAll('.dropSourceText');
+const btnAddEquipment = document.querySelectorAll('.equipImgContainer');
+const dropSourceBarById = document.getElementById("dropSourceBarId");
+var modal = document.getElementById("equipmentModal");
+var modalClose = document.getElementsByClassName("close")[0];
+var bodyTag = document.getElementsByTagName("body")[0];
 
 $(document).ready(function(){ 
     $('#dropSourceDungeonId').click(function(){
-        document.getElementById("dropSourceDungeonId").style.border = "5px solid";
-        document.getElementById("dropSourceDungeonId").style.borderColor = "white";
-        document.getElementById("dropSourceDungeonId").style.borderStyle = "ridge";
-        document.getElementById("dropSourceDungeonId").style.filter = "grayscale(0%)";
-        document.getElementById("dropSourceTextDungeonId").style.color = "white";
+        if(document.getElementById("dropSourceDungeonId").style.filter == "grayscale(0%)"){
+            document.getElementById("dropSourceDungeonId").style.border = "0px";
+            document.getElementById("dropSourceDungeonId").style.filter = "grayscale(100%)";
+            document.getElementById("dropSourceTextDungeonId").style.color = "grey";
+        } else {
+            document.getElementById("dropSourceDungeonId").style.border = "5px solid";
+            document.getElementById("dropSourceDungeonId").style.borderColor = "white";
+            document.getElementById("dropSourceDungeonId").style.borderStyle = "ridge";
+            document.getElementById("dropSourceDungeonId").style.filter = "grayscale(0%)";
+            document.getElementById("dropSourceTextDungeonId").style.color = "white";
+        }
     });
 
     $('#dropSourceRaideId').click(function(){
-        document.getElementById("dropSourceRaideId").style.border = "5px solid";
-        document.getElementById("dropSourceRaideId").style.borderColor = "white";
-        document.getElementById("dropSourceRaideId").style.borderStyle = "ridge";
-        document.getElementById("dropSourceRaideId").style.filter = "grayscale(0%)";
-        document.getElementById("dropSourceTextRaideId").style.color = "white";
+        if(document.getElementById("dropSourceRaideId").style.filter == "grayscale(0%)"){
+            document.getElementById("dropSourceRaideId").style.border = "0px";
+            document.getElementById("dropSourceRaideId").style.filter = "grayscale(100%)";
+            document.getElementById("dropSourceTextRaideId").style.color = "grey";
+        } else {
+            document.getElementById("dropSourceRaideId").style.border = "5px solid";
+            document.getElementById("dropSourceRaideId").style.borderColor = "white";
+            document.getElementById("dropSourceRaideId").style.borderStyle = "ridge";
+            document.getElementById("dropSourceRaideId").style.filter = "grayscale(0%)";
+            document.getElementById("dropSourceTextRaideId").style.color = "white";
+        }
     }); 
 
     $('#dropSourcePvpId').click(function(){
-        document.getElementById("dropSourcePvpId").style.border = "5px solid";
-        document.getElementById("dropSourcePvpId").style.borderColor = "white";
-        document.getElementById("dropSourcePvpId").style.borderStyle = "ridge";
-        document.getElementById("dropSourcePvpId").style.filter = "grayscale(0%)";
-        document.getElementById("dropSourceTextPvpId").style.color = "white";
+        if(document.getElementById("dropSourcePvpId").style.filter == "grayscale(0%)"){
+            document.getElementById("dropSourcePvpId").style.border = "0px";
+            document.getElementById("dropSourcePvpId").style.filter = "grayscale(100%)";
+            document.getElementById("dropSourceTextPvpId").style.color = "grey";
+        } else {
+            document.getElementById("dropSourcePvpId").style.border = "5px solid";
+            document.getElementById("dropSourcePvpId").style.borderColor = "white";
+            document.getElementById("dropSourcePvpId").style.borderStyle = "ridge";
+            document.getElementById("dropSourcePvpId").style.filter = "grayscale(0%)";
+            document.getElementById("dropSourceTextPvpId").style.color = "white";
+        }
     }); 
 
     $('#dropSourceProfessionId').click(function(){
-        document.getElementById("dropSourceProfessionId").style.border = "5px solid";
-        document.getElementById("dropSourceProfessionId").style.borderColor = "white";
-        document.getElementById("dropSourceProfessionId").style.borderStyle = "ridge";
-        document.getElementById("dropSourceProfessionId").style.filter = "grayscale(0%)";
-        document.getElementById("dropSourceTextProfessionId").style.color = "white";
-    }); 
+        if(document.getElementById("dropSourceProfessionId").style.filter == "grayscale(0%)"){
+            document.getElementById("dropSourceProfessionId").style.border = "0px";
+            document.getElementById("dropSourceProfessionId").style.filter = "grayscale(100%)";
+            document.getElementById("dropSourceTextProfessionId").style.color = "grey";
+        } else {
+            document.getElementById("dropSourceProfessionId").style.border = "5px solid";
+            document.getElementById("dropSourceProfessionId").style.borderColor = "white";
+            document.getElementById("dropSourceProfessionId").style.borderStyle = "ridge";
+            document.getElementById("dropSourceProfessionId").style.filter = "grayscale(0%)";
+            document.getElementById("dropSourceTextProfessionId").style.color = "white";
+        }
+    });
+
+    $(btnAddEquipment).click(function(){
+        modal.style.display = "block";
+        bodyTag.style.overflowY = "hidden";
+        bodyTag.style.paddingRight = "18px";
+        dropSourceBarById.style.right = "8px";
+        dropSourceBarById.style.transition = "0s";
+    });
+
+    $(modalClose).click(function(){
+        modal.style.display = "none";
+        bodyTag.style.overflowY = "auto";
+        bodyTag.style.paddingRight = "0px";
+        dropSourceBarById.style.right = "0px";
+        setTimeout(function() {
+            dropSourceBarById.style.transition = "0.4s";
+        }, 500);
+    });
+
+    $(window).click(function(event){
+        if (event.target == modal) {
+            modal.style.display = "none";
+            bodyTag.style.overflowY = "auto";
+            bodyTag.style.right = "0px";
+            dropSourceBarById.style.right = "0px";
+            setTimeout(function() {
+                dropSourceBarById.style.transition = "0.4s";
+            }, 500);
+        }
+    });
 });
 
 function scrollFunction() {
@@ -50,7 +109,7 @@ function scrollFunction() {
     });
 
     dropSourceText.forEach(dropSourceText => {
-        dropSourceText.style.top = "43%";
+        dropSourceText.style.top = "42.5%";
     });
 
   } else {
@@ -65,9 +124,7 @@ function scrollFunction() {
     });
 
     dropSourceText.forEach(dropSourceText => {
-        dropSourceText.style.top = "40%";
+        dropSourceText.style.top = "42.5%";
     });
   }
 }
-
-
