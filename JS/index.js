@@ -81,7 +81,19 @@ $(document).ready(function () {
         bodyTag.style.marginRight = "18px";
         dropSourceBarById.style.right = "8px";
         dropSourceBarById.style.transition = "0s";
-        document.getElementById("innerModal").innerText = DATA.dungeonEquipments[0].name;
+        //MODAL TEST START
+        document.getElementById("innerModal").innerText = DATA.dungeonEquipments[12].dungeon;
+        document.getElementById("innerModal").innerText += ". __________________________________________________ .";
+        document.getElementById("innerModal").innerText += DATA.dungeonEquipments[12].boss;
+        document.getElementById("innerModal").innerText += ". __________________________________________________ .";
+        document.getElementById("innerModal").innerText += DATA.dungeonEquipments[12].name;
+        document.getElementById("innerModal").innerText += ". __________________________________________________ .";
+        document.getElementById("innerModal").innerText += DATA.dungeonEquipments[12].slot;
+        document.getElementById("innerModal").innerText += ". __________________________________________________ .";
+        document.getElementById("innerModal").innerText += DATA.dungeonEquipments[12].type;
+        document.getElementById("innerModal").innerText += ". __________________________________________________ .";
+        document.getElementById("innerModal").innerText += DATA.dungeonEquipments[12].bonus.Use;
+        //MODAL TEST END
     });
 
     $(modalClose).click(function () {

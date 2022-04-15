@@ -2,64 +2,712 @@ var DATA = {
     "dungeonEquipments": [
         {
             "id": "1",
-            "slot": "Head",
-            "type": "Plate",
-            "name": "Great Crow",
-            "dungeon": "De Other Side",
-            "boss": "Millhouse Manastorm",
+            "slot": "Main Hand",
+            "type": "One-Handed Mace",
+            "name": "Engorged Worm Smasher",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Blightbone",
+            "wowheadID": "178730",
             "stat": {
                 "critical": 0,
-                "haste": 6,
-                "mastery": 4,
-                "versatility": 0
+                "haste": 30,
+                "mastery": 0,
+                "versatility": 16
+            },
+            "main": {
+                "intellect": false,
+                "agility": false,
+                "strength": true
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
             }
         },
 
         {
             "id": "2",
-            "slot": "Neck",
-            "type": "Cloth",
-            "name": "Great Crow 2",
-            "dungeon": "De Other Side 2",
-            "boss": "Millhouse Manastorm 2",
+            "slot": "Main Hand",
+            "type": "Gun",
+            "name": "Blight Belcher",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Blightbone",
+            "wowheadID": "178735",
             "stat": {
-                "critical": 2,
-                "haste": 2,
-                "mastery": 2,
-                "versatility": 2
+                "critical": 0,
+                "haste": 0,
+                "mastery": 34,
+                "versatility": 58
+            },
+            "main": {
+                "intellect": false,
+                "agility": true,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "3",
+            "slot": "Head",
+            "type": "Cloth",
+            "name": "Abominable Visage",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Blightbone",
+            "wowheadID": "178732",
+            "stat": {
+                "critical": 58,
+                "haste": 0,
+                "mastery": 34,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": true,
+                "agility": false,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "4",
+            "slot": "Shoulder",
+            "type": "Mail",
+            "name": "Blightbone Spaulders",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Blightbone",
+            "wowheadID": "178733",
+            "stat": {
+                "critical": 0,
+                "haste": 0,
+                "mastery": 26,
+                "versatility": 44
+            },
+            "main": {
+                "intellect": true,
+                "agility": true,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "5",
+            "slot": "Waist",
+            "type": "Plate",
+            "name": "Fused Bone Greatbelt",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Blightbone",
+            "wowheadID": "178734",
+            "stat": {
+                "critical": 0,
+                "haste": 0,
+                "mastery": 42,
+                "versatility": 27
+            },
+            "main": {
+                "intellect": true,
+                "agility": false,
+                "strength": true
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "6",
+            "slot": "Feet",
+            "type": "Leather",
+            "name": "Viscera-Stitched Footpads",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Blightbone",
+            "wowheadID": "178731",
+            "stat": {
+                "critical": 24,
+                "haste": 0,
+                "mastery": 0,
+                "versatility": 45
+            },
+            "main": {
+                "intellect": true,
+                "agility": true,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "7",
+            "slot": "Finger",
+            "type": "Unique-Equipped",
+            "name": "Stitchflesh's Misplaced Signet",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Blightbone",
+            "wowheadID": "178736",
+            "stat": {
+                "critical": 0,
+                "haste": 68,
+                "mastery": 0,
+                "versatility": 38
+            },
+            "main": {
+                "intellect": false,
+                "agility": false,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "8",
+            "slot": "Main Hand",
+            "type": "One-Handed Sword",
+            "name": "Amarth's Spellblade",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Amarth, The Harvester",
+            "wowheadID": "178737",
+            "stat": {
+                "critical": 27,
+                "haste": 19,
+                "mastery": 0,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": true,
+                "agility": false,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "9",
+            "slot": "Head",
+            "type": "Mail",
+            "name": "Rattling Deadeye Hood",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Amarth, The Harvester",
+            "wowheadID": "178738",
+            "stat": {
+                "critical": 60,
+                "haste": 0,
+                "mastery": 32,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": true,
+                "agility": true,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "10",
+            "slot": "Shoulder",
+            "type": "Cloth",
+            "name": "Reanimator's Mantle",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Amarth, The Harvester",
+            "wowheadID": "178740",
+            "stat": {
+                "critical": 0,
+                "haste": 42,
+                "mastery": 27,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": true,
+                "agility": false,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "11",
+            "slot": "Wrist",
+            "type": "Leather",
+            "name": "Risen Monstrosity Cuffs",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Amarth, The Harvester",
+            "wowheadID": "178741",
+            "stat": {
+                "critical": 0,
+                "haste": 33,
+                "mastery": 0,
+                "versatility": 19
+            },
+            "main": {
+                "intellect": true,
+                "agility": true,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "12",
+            "slot": "Legs",
+            "type": "Plate",
+            "name": "Legplates of Unholy Frenzy",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Amarth, The Harvester",
+            "wowheadID": "178739",
+            "stat": {
+                "critical": 58,
+                "haste": 0,
+                "mastery": 34,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": true,
+                "agility": false,
+                "strength": true
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "13",
+            "slot": "Trinket",
+            "type": "Unique-Equipped",
+            "name": "Bottled Flayedwing Toxin",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Amarth, The Harvester",
+            "wowheadID": "178742",
+            "stat": {
+                "critical": 0,
+                "haste": 0,
+                "mastery": 0,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": false,
+                "agility": true,
+                "strength": false
+            },
+            "bonus": {
+                "Use": "Coat your weapons in Flayedwing Toxin for 1 hour, giving your attacks a high chance to deal 576 Nature damage over 6 sec.",
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "14",
+            "slot": "Main Hand",
+            "type": "One-Handed",
+            "name": "Stitchflesh's Scalpel",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Surgeon Stitchflesh",
+            "wowheadID": "178743",
+            "stat": {
+                "critical": 18,
+                "haste": 0,
+                "mastery": 28,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": false,
+                "agility": true,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "15",
+            "slot": "Off Hand",
+            "type": "Shield",
+            "name": "Encrusted Canopic Lid",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Surgeon Stitchflesh",
+            "wowheadID": "178750",
+            "stat": {
+                "critical": 27,
+                "haste": 0,
+                "mastery": 0,
+                "versatility": 19
+            },
+            "main": {
+                "intellect": true,
+                "agility":false,
+                "strength": true
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "16",
+            "slot": "Shoulder",
+            "type": "Plate",
+            "name": "Vile Butcher's Pauldrons",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Surgeon Stitchflesh",
+            "wowheadID": "178749",
+            "stat": {
+                "critical": 45,
+                "haste": 0,
+                "mastery": 0,
+                "versatility": 24
+            },
+            "main": {
+                "intellect": true,
+                "agility":false,
+                "strength": true
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "17",
+            "slot": "Chest",
+            "type": "Leather",
+            "name": "Freshly Embalmed Jerkin",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Surgeon Stitchflesh",
+            "wowheadID": "178744",
+            "stat": {
+                "critical": 38,
+                "haste": 0,
+                "mastery": 54,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": true,
+                "agility": true,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "18",
+            "slot": "Hands",
+            "type": "Cloth",
+            "name": "Gory Surgeon's Gloves",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Surgeon Stitchflesh",
+            "wowheadID": "178748",
+            "stat": {
+                "critical": 24,
+                "haste": 0,
+                "mastery": 45,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": true,
+                "agility": false,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "19",
+            "slot": "Feet",
+            "type": "Mail",
+            "name": "Striders of Restless Malice",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Surgeon Stitchflesh",
+            "wowheadID": "178745",
+            "stat": {
+                "critical": 29,
+                "haste": 0,
+                "mastery": 0,
+                "versatility": 41
+            },
+            "main": {
+                "intellect": true,
+                "agility": true,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "20",
+            "slot": "Trinket",
+            "type": "Unique-Equipped",
+            "name": "Satchel of Misbegotten Minions",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Surgeon Stitchflesh",
+            "wowheadID": "178772",
+            "stat": {
+                "critical": 0,
+                "haste": 0,
+                "mastery": 0,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": true,
+                "agility": false,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": "Your damaging spells have a chance to draw a minion from the satchel, sending it running at your target where it explodes, dealing 1054 Shadow damage split between all nearby enemies. Damage is increased for each enemy struck, up to 5 enemies."
+            }
+        },
+
+        {
+            "id": "21",
+            "slot": "Trinket",
+            "type": "Unique-Equipped",
+            "name": "Spare Meat Hook",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Surgeon Stitchflesh",
+            "wowheadID": "178751",
+            "stat": {
+                "critical": 0,
+                "haste": 0,
+                "mastery": 0,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": false,
+                "agility": false,
+                "strength": true
+            },
+            "bonus": {
+                "Use": "Hook an enemy who is within 8 yds, causing them to bleed for 449 Physical damage every 1 sec and reducing their movement speed by 50%. Lasts 10 sec, or until they move more than 16 yds away from you. (2 Min Cooldown)",
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "22",
+            "slot": "Main Hand",
+            "type": "Two-Handed Sword",
+            "name": "Rimebinder's Runeblade",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Nalthor the Rimebinder",
+            "wowheadID": "178780",
+            "stat": {
+                "critical": 0,
+                "haste": 60,
+                "mastery": 0,
+                "versatility": 32
+            },
+            "main": {
+                "intellect": false,
+                "agility": false,
+                "strength": true
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "23",
+            "slot": "Head",
+            "type": "Plate",
+            "name": "Darkfrost Helmet",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Nalthor the Rimebinder",
+            "wowheadID": "178777",
+            "stat": {
+                "critical": 0,
+                "haste": 38,
+                "mastery": 0,
+                "versatility": 54
+            },
+            "main": {
+                "intellect": true,
+                "agility": false,
+                "strength": true
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "24",
+            "slot": "Shoulder",
+            "type": "Leather",
+            "name": "Undying Chill Shoulderpads",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Nalthor the Rimebinder",
+            "wowheadID": "178779",
+            "stat": {
+                "critical": 0,
+                "haste": 0,
+                "mastery": 42,
+                "versatility": 27
+            },
+            "main": {
+                "intellect": true,
+                "agility": true,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "25",
+            "slot": "Wrist",
+            "type": "Cloth",
+            "name": "Necropolis Lord's Shackles",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Nalthor the Rimebinder",
+            "wowheadID": "178782",
+            "stat": {
+                "critical": 0,
+                "haste": 0,
+                "mastery": 31,
+                "versatility": 22
+            },
+            "main": {
+                "intellect": true,
+                "agility": false,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "26",
+            "slot": "Legs",
+            "type": "Mail",
+            "name": "Lichbone Legguards",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Nalthor the Rimebinder",
+            "wowheadID": "178778",
+            "stat": {
+                "critical": 0,
+                "haste": 36,
+                "mastery": 0,
+                "versatility": 56
+            },
+            "main": {
+                "intellect": true,
+                "agility": true,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "27",
+            "slot": "Finger",
+            "type": "Unique-Equipped",
+            "name": "Ritual Commander's Ring",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Nalthor the Rimebinder",
+            "wowheadID": "178781",
+            "stat": {
+                "critical": 41,
+                "haste": 0,
+                "mastery": 0,
+                "versatility": 65
+            },
+            "main": {
+                "intellect": false,
+                "agility": false,
+                "strength": false
+            },
+            "bonus": {
+                "Use": null,
+                "Equip": null
+            }
+        },
+
+        {
+            "id": "28",
+            "slot": "Trinket",
+            "type": "Unique-Equipped",
+            "name": "Siphoning Phylactery Shard",
+            "dungeon": "The Necrotic Wake",
+            "boss": "Nalthor the Rimebinder",
+            "wowheadID": "178783",
+            "stat": {
+                "critical": 0,
+                "haste": 0,
+                "mastery": 0,
+                "versatility": 0
+            },
+            "main": {
+                "intellect": true,
+                "agility": false,
+                "strength": false
+            },
+            "bonus": {
+                "Use": "Sacrifice 1148 health to charge the phylactery. Healing a target below 30% health expends the phylactery's charge to amplify your spell, restoring 2297 additional health to the target. (30 Sec Cooldown)",
+                "Equip": null
             }
         }
     ],
 
     "raideEquipments": [
         {
-            "id": "1",
-            "slot": "Head",
-            "type": "Plate",
-            "name": "Great Crow",
-            "dungeon": "De Other Side",
-            "boss": "Millhouse Manastorm",
-            "stat": {
-                "critical": 0,
-                "haste": 6,
-                "mastery": 4,
-                "versatility": 0
-            }
+        
         },
 
         {
-            "id": "2",
-            "slot": "Neck",
-            "type": "Cloth",
-            "name": "Great Crow 2",
-            "dungeon": "De Other Side 2",
-            "boss": "Millhouse Manastorm 2",
-            "stat": {
-                "critical": 2,
-                "haste": 2,
-                "mastery": 2,
-                "versatility": 2
-            }
+    
         }
     ]
 };
