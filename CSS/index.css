@@ -56,9 +56,12 @@ body {
 }
 
 .navBar {
+    background-color: #1e1e1e;
     min-height: 40px;
+    width: 100%;
     position: fixed;
     top: 0px;
+    z-index: 98;
 }
 
 .dropSourceBar {

@@ -1,4 +1,4 @@
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 const dropSourceBarList = document.querySelectorAll('.dropSourceBar');
 const dropSourceList = document.querySelectorAll('.dropSource');
 const dropSourceText = document.querySelectorAll('.dropSourceText');
@@ -9,9 +9,10 @@ var bodyTag = document.getElementsByTagName("body")[0];
 var modal = document.getElementById("equipmentModal");
 var dungeonSourceClicked, raideSourceClicked, pvpSourceClicked, professionSourceClicked = false;
 
-$(document).ready(function(){ 
-    $('#dropSourceDungeonId').click(function(){
-        if(dungeonSourceClicked == true){
+$(document).ready(function () {
+
+    $('#dropSourceDungeonId').click(function () {
+        if (dungeonSourceClicked == true) {
             dungeonSourceClicked = false;
             document.getElementById("dropSourceDungeonId").style.border = "0px";
             document.getElementById("dropSourceDungeonId").style.filter = "grayscale(100%)";
@@ -26,8 +27,8 @@ $(document).ready(function(){
         }
     });
 
-    $('#dropSourceRaideId').click(function(){
-        if(raideSourceClicked == true){
+    $('#dropSourceRaideId').click(function () {
+        if (raideSourceClicked == true) {
             raideSourceClicked = false;
             document.getElementById("dropSourceRaideId").style.border = "0px";
             document.getElementById("dropSourceRaideId").style.filter = "grayscale(100%)";
@@ -40,10 +41,10 @@ $(document).ready(function(){
             document.getElementById("dropSourceRaideId").style.filter = "grayscale(0%)";
             document.getElementById("dropSourceTextRaideId").style.color = "white";
         }
-    }); 
+    });
 
-    $('#dropSourcePvpId').click(function(){
-        if(pvpSourceClicked == true){
+    $('#dropSourcePvpId').click(function () {
+        if (pvpSourceClicked == true) {
             pvpSourceClicked = false;
             document.getElementById("dropSourcePvpId").style.border = "0px";
             document.getElementById("dropSourcePvpId").style.filter = "grayscale(100%)";
@@ -56,10 +57,10 @@ $(document).ready(function(){
             document.getElementById("dropSourcePvpId").style.filter = "grayscale(0%)";
             document.getElementById("dropSourceTextPvpId").style.color = "white";
         }
-    }); 
+    });
 
-    $('#dropSourceProfessionId').click(function(){
-        if(professionSourceClicked == true){
+    $('#dropSourceProfessionId').click(function () {
+        if (professionSourceClicked == true) {
             professionSourceClicked = false;
             document.getElementById("dropSourceProfessionId").style.border = "0px";
             document.getElementById("dropSourceProfessionId").style.filter = "grayscale(100%)";
@@ -74,31 +75,32 @@ $(document).ready(function(){
         }
     });
 
-    $(btnAddEquipment).click(function(){
+    $(btnAddEquipment).click(function () {
         modal.style.display = "block";
         bodyTag.style.overflowY = "hidden";
         bodyTag.style.marginRight = "18px";
         dropSourceBarById.style.right = "8px";
         dropSourceBarById.style.transition = "0s";
+        document.getElementById("innerModal").innerText = DATA.dungeonEquipments[0].name;
     });
 
-    $(modalClose).click(function(){
+    $(modalClose).click(function () {
         modal.style.display = "none";
         bodyTag.style.overflowY = "auto";
         bodyTag.style.marginRight = "0px";
         dropSourceBarById.style.right = "0px";
-        setTimeout(function() {
+        setTimeout(function () {
             dropSourceBarById.style.transition = "0.4s";
         }, 500);
     });
 
-    $(window).click(function(event){
+    $(window).click(function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
             bodyTag.style.overflowY = "auto";
             bodyTag.style.marginRight = "0px";
             dropSourceBarById.style.right = "0px";
-            setTimeout(function() {
+            setTimeout(function () {
                 dropSourceBarById.style.transition = "0.4s";
             }, 500);
         }
@@ -106,34 +108,34 @@ $(document).ready(function(){
 });
 
 function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    dropSourceBarList.forEach(dropSourceBar => {
-        dropSourceBar.style.top = "0px";
-        dropSourceBar.style.height = "80px"
-    });
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        dropSourceBarList.forEach(dropSourceBar => {
+            dropSourceBar.style.top = "0px";
+            dropSourceBar.style.height = "80px"
+        });
 
-    dropSourceList.forEach(dropSource => {
-        dropSource.classList.remove('dropSource','dropSourceSmall');
-        dropSource.classList.add('dropSourceSmall');
-    });
+        dropSourceList.forEach(dropSource => {
+            dropSource.classList.remove('dropSource', 'dropSourceSmall');
+            dropSource.classList.add('dropSourceSmall');
+        });
 
-    dropSourceText.forEach(dropSourceText => {
-        dropSourceText.style.top = "42.5%";
-    });
+        dropSourceText.forEach(dropSourceText => {
+            dropSourceText.style.top = "42.5%";
+        });
 
-  } else {
-    dropSourceBarList.forEach(dropSourceBar => {
-        dropSourceBar.style.top= "40px";
-        dropSourceBar.style.height = "205px"
-    });
+    } else {
+        dropSourceBarList.forEach(dropSourceBar => {
+            dropSourceBar.style.top = "40px";
+            dropSourceBar.style.height = "205px"
+        });
 
-    dropSourceList.forEach(dropSource => {
-        dropSource.classList.remove('dropSource','dropSourceSmall');
-        dropSource.classList.add('dropSource');
-    });
+        dropSourceList.forEach(dropSource => {
+            dropSource.classList.remove('dropSource', 'dropSourceSmall');
+            dropSource.classList.add('dropSource');
+        });
 
-    dropSourceText.forEach(dropSourceText => {
-        dropSourceText.style.top = "42.5%";
-    });
-  }
+        dropSourceText.forEach(dropSourceText => {
+            dropSourceText.style.top = "42.5%";
+        });
+    }
 }
