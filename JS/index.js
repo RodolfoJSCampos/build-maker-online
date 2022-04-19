@@ -122,8 +122,7 @@ $(document).ready(function () {
 function scrollFunction() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         dropSourceBarList.forEach(dropSourceBar => {
-            dropSourceBar.style.top = "0px";
-            dropSourceBar.style.height = "80px"
+            dropSourceBar.style.height = "70px"
         });
 
         dropSourceList.forEach(dropSource => {
@@ -137,7 +136,6 @@ function scrollFunction() {
 
     } else {
         dropSourceBarList.forEach(dropSourceBar => {
-            dropSourceBar.style.top = "40px";
             dropSourceBar.style.height = "205px"
         });
 
