@@ -3,6 +3,7 @@ const dropSourceBarList = document.querySelectorAll('.dropSourceBar');
 const dropSourceList = document.querySelectorAll('.dropSource');
 const dropSourceText = document.querySelectorAll('.dropSourceText');
 const btnAddEquipment = document.querySelectorAll('.equipImgContainer');
+const classPickerBarJs = document.querySelectorAll('.classPickerBar');
 const dropSourceBarById = document.getElementById("dropSourceBarId");
 var modalClose = document.getElementsByClassName("close")[0];
 var bodyTag = document.getElementsByTagName("body")[0];
@@ -125,18 +126,34 @@ function scrollFunction() {
             dropSourceBar.style.height = "70px"
         });
 
+        classPickerBarJs.forEach(classPickerBar => {
+            classPickerBar.style.height = "40px"
+        });
+
         dropSourceList.forEach(dropSource => {
             dropSource.classList.remove('dropSource', 'dropSourceSmall');
             dropSource.classList.add('dropSourceSmall');
+        });
+
+        classPickerBarJs.forEach(classPickerBar => {
+            classPickerBar.style.height = "40px"
         });
 
         dropSourceText.forEach(dropSourceText => {
             dropSourceText.style.top = "42.5%";
         });
 
+        classPickerBarJs.forEach(classPickerBar => {
+            classPickerBar.style.top = "70px"
+        });
+
     } else {
         dropSourceBarList.forEach(dropSourceBar => {
             dropSourceBar.style.height = "205px"
+        });
+
+        classPickerBarJs.forEach(classPickerBar => {
+            classPickerBar.style.height = "80px"
         });
 
         dropSourceList.forEach(dropSource => {
@@ -146,6 +163,10 @@ function scrollFunction() {
 
         dropSourceText.forEach(dropSourceText => {
             dropSourceText.style.top = "42.5%";
+        });
+
+        classPickerBarJs.forEach(classPickerBar => {
+            classPickerBar.style.top = "205px"
         });
     }
 }
