@@ -33,11 +33,12 @@
                 <span class="dropSourceText" id="dropSourceTextProfessionId">Profession</span>
             </div>
         </div>
-        <div class="classPickerBar">
+        <div class="classPickerBar" id="classPickerBarId">
             <div class="attributePicker" id="criticalOption">Critical</div>
             <div class="attributePicker" id="hasteOption">Haste</div>
             <div class="classPickerFrame">
                 <div id="selectClass">
+                    <!--
                     <select>
                         <option value="0">Select class:</option>
                         <option value="1">Demon Hunter</option>
@@ -53,15 +54,11 @@
                         <option value="11">Warlock</option>
                         <option value="12">Warrior</option>
                     </select>
+                    -->
+                </div>
+                <div id="selectSpec">
                 </div>
                 <div class="classPicker"></div>
-                <div id="selectSpec">
-                    <select>
-                        <option value="0">Select spec:</option>
-                        <option value="1">Revenge</option>
-                        <option value="2">Havoc</option>
-                    </select>
-                </div>
             </div>
             <div class="attributePicker" id="masteryOption">Mastery</div>
             <div class="attributePicker" id="versatilityOption">Versatility</div>
@@ -84,8 +81,8 @@
                     </div>
                 </div>
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/HeadPlaceholder.jpg" alt="Head">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/HeadPlaceholder.jpg" alt="Head">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
             </div>
 
@@ -104,8 +101,8 @@
                     </div>
                 </div>
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/NeckPlaceholder.jpg" alt="Neck">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/NeckPlaceholder.jpg" alt="Neck">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
             </div>
 
@@ -124,8 +121,8 @@
                     </div>
                 </div>
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/ShoulderPlaceholder.jpg" alt="Shoulder">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/ShoulderPlaceholder.jpg" alt="Shoulder">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
             </div>
 
@@ -144,8 +141,8 @@
                     </div>
                 </div>
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/BackPlaceholder.jpg" alt="Back">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/BackPlaceholder.jpg" alt="Back">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
             </div>
 
@@ -164,8 +161,8 @@
                     </div>
                 </div>
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/ChestPlaceholder.jpg" alt="Chest">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/ChestPlaceholder.jpg" alt="Chest">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
             </div>
 
@@ -184,8 +181,8 @@
                     </div>
                 </div>
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/ShirtPlaceholder.jpg" alt="Shirt">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/ShirtPlaceholder.jpg" alt="Shirt">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
             </div>
 
@@ -204,8 +201,8 @@
                     </div>
                 </div>
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/TabardPlaceholder.jpg" alt="Tabard">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/TabardPlaceholder.jpg" alt="Tabard">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
             </div>
 
@@ -224,13 +221,13 @@
                     </div>
                 </div>
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/WristPlaceholder.jpg" alt="Hand">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/WristPlaceholder.jpg" alt="Hand">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
             </div>
         </div>
         <div class="charPlace">
-            <img class="charImage" style="filter: grayscale(100%)" src="./Images/CharPlaceHolder.png" alt="Char Placeholder">
+            <img class="charImage" style="filter: grayscale(100%)" draggable="false" src="./Images/CharPlaceHolder.png" alt="Char Placeholder">
             <div class="middleEquipments">
                 <div class="equipment" id="mainHandEquip">
                     <div class="equipText">
@@ -247,15 +244,15 @@
                         </div>
                     </div>
                     <div class="equipImgContainer">
-                        <img class="equipImg" src="./Images/Equipments/Placeholders/MainHandPlaceholder.jpg" alt="Main Hand">
-                        <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                        <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/MainHandPlaceholder.jpg" alt="Main Hand">
+                        <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                     </div>
                 </div>
 
                 <div class="equipment" id="offHandEquip">
                     <div class="equipImgContainer">
-                        <img class="equipImg" src="./Images/Equipments/Placeholders/OffHandPlaceholder.jpg" alt="OffHand">
-                        <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                        <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/OffHandPlaceholder.jpg" alt="OffHand">
+                        <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                     </div>
                     <div class="equipText">
                         <div class="equipName"></div>
@@ -276,8 +273,8 @@
         <div class="rightEquipments">
             <div class="equipment" id="handEquip"> 
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/HandPlaceholder.jpg" alt="Hand">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/HandPlaceholder.jpg" alt="Hand">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
                 <div class="equipText">
                     <div class="equipName"></div>
@@ -296,8 +293,8 @@
 
             <div class="equipment" id="waistEquip">
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/WaistPlaceholder.jpg" alt="Waist">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/WaistPlaceholder.jpg" alt="Waist">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
                 <div class="equipText">
                     <div class="equipName"></div>
@@ -316,8 +313,8 @@
 
             <div class="equipment" id="legEquip">
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/LegPlaceholder.jpg" alt="Leg">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/LegPlaceholder.jpg" alt="Leg">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
                 <div class="equipText">
                     <div class="equipName"></div>
@@ -336,8 +333,8 @@
 
             <div class="equipment" id="footEquip">
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/FootPlaceholder.jpg" alt="Foot">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/FootPlaceholder.jpg" alt="Foot">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
                 <div class="equipText">
                     <div class="equipName"></div>
@@ -356,8 +353,8 @@
 
             <div class="equipment" id="fingerEquip_1">
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/FingerPlaceholder.jpg" alt="Finger">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/FingerPlaceholder.jpg" alt="Finger">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
                 <div class="equipText">
                     <div class="equipName"></div>
@@ -376,8 +373,8 @@
 
             <div class="equipment" id="fingerEquip_2">
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/FingerPlaceholder.jpg" alt="Finger">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/FingerPlaceholder.jpg" alt="Finger">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
                 <div class="equipText">
                     <div class="equipName"></div>
@@ -396,8 +393,8 @@
 
             <div class="equipment" id="trinketEquip_1">
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/TrinketPlaceholder.jpg" alt="Trinket">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/TrinketPlaceholder.jpg" alt="Trinket">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
                 <div class="equipText">
                     <div class="equipName"></div>
@@ -416,8 +413,8 @@
 
             <div class="equipment" id="trinketEquip_2">
                 <div class="equipImgContainer">
-                    <img class="equipImg" src="./Images/Equipments/Placeholders/TrinketPlaceholder.jpg" alt="Trinket">
-                    <img class="addImg" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
+                    <img class="equipImg" draggable="false" src="./Images/Equipments/Placeholders/TrinketPlaceholder.jpg" alt="Trinket">
+                    <img class="addImg" draggable="false" src="./Images/Icons/2x/outline_add_circle_white_24dp.png" alt="Add">
                 </div>
                 <div class="equipText">
                     <div class="equipName"></div>

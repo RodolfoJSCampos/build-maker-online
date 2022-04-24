@@ -175,25 +175,37 @@ img.dropSource{
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.12);
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: center;
     transition: 0.4s;
     overflow: hidden;
     position: fixed;
     top: 205px;
     z-index: 98;
+    transition: 0.4s;
 }
 
 .classPickerFrame {
     display: flex;
+    max-width: 360px;
+    min-width: 360px;
+    transition: 0.4s;
 }
 
 .attributePicker {
-    background-color: greenyellow;
-    height: 30px;
-    width: 120px;
+    background-color: rgb(100, 100, 100);
+    color: black;
+    min-width: 120px;
+    max-height: 14px;
     margin-left: 10px;
     margin-right: 10px;
+    margin-top: 25px;
     border-radius: 15px;
+    text-align: center;
+    font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: medium;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    transition: 0.4s;
 }
 
 /*
@@ -213,31 +225,28 @@ img.dropSource{
     Evoker: #33937F;
 */
 
-#hasteOption {
-    margin-right: 30px !important;
-}
-
-#masteryOption {
-    margin-left: 30px !important;
-}
-
 #selectClass {
+    background-color: yellow;
     height: 48px;
-    width: 120px;
-    min-width: 120px;
+    min-width: 180px;
+    position: fixed;
 }
 
 .classPicker {
-    background-color: greenyellow;
+    background-color: rgb(36, 127, 0);
     height: 68px;
     width: 68px;
     border-radius: 34px;
+    margin-left: 146px;
+    position: fixed;
 }
 
 #selectSpec {
+    background-color: purple;
     height: 48px;
-    width: 120px;
-    min-width: 120px;
+    min-width: 180px;
+    margin-left: 180px;
+    position: fixed;
 }
 
 .equipPicker {

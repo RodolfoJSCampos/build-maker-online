@@ -4,7 +4,9 @@ const dropSourceList = document.querySelectorAll('.dropSource');
 const dropSourceText = document.querySelectorAll('.dropSourceText');
 const btnAddEquipment = document.querySelectorAll('.equipImgContainer');
 const classPickerBarJs = document.querySelectorAll('.classPickerBar');
+const attributePickerJs = document.querySelectorAll('.attributePicker');
 const dropSourceBarById = document.getElementById("dropSourceBarId");
+const classPickerBarById = document.getElementById("classPickerBarId");
 var modalClose = document.getElementsByClassName("close")[0];
 var bodyTag = document.getElementsByTagName("body")[0];
 var modal = document.getElementById("equipmentModal");
@@ -82,6 +84,8 @@ $(document).ready(function () {
         bodyTag.style.marginRight = "18px";
         dropSourceBarById.style.right = "8px";
         dropSourceBarById.style.transition = "0s";
+        classPickerBarById.style.right = "8px";
+        classPickerBarById.style.transition = "0s";
         //MODAL TEST START
         document.getElementById("innerModal").innerText = DATA.dungeonEquipments[12].dungeon;
         document.getElementById("innerModal").innerText += ". __________________________________________________ .";
@@ -102,9 +106,11 @@ $(document).ready(function () {
         bodyTag.style.overflowY = "auto";
         bodyTag.style.marginRight = "0px";
         dropSourceBarById.style.right = "0px";
+        classPickerBarById.style.right = "0px";
         setTimeout(function () {
             dropSourceBarById.style.transition = "0.4s";
-        }, 500);
+            classPickerBarById.style.transition = "0.4s";
+        }, 400);
     });
 
     $(window).click(function (event) {
@@ -113,9 +119,11 @@ $(document).ready(function () {
             bodyTag.style.overflowY = "auto";
             bodyTag.style.marginRight = "0px";
             dropSourceBarById.style.right = "0px";
+            classPickerBarById.style.right = "0px";
             setTimeout(function () {
                 dropSourceBarById.style.transition = "0.4s";
-            }, 500);
+                classPickerBarById.style.transition = "0.4s";
+            }, 400);
         }
     });
 });
@@ -123,11 +131,11 @@ $(document).ready(function () {
 function scrollFunction() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         dropSourceBarList.forEach(dropSourceBar => {
-            dropSourceBar.style.height = "70px"
+            dropSourceBar.style.height = "70px";
         });
 
         classPickerBarJs.forEach(classPickerBar => {
-            classPickerBar.style.height = "40px"
+            classPickerBar.style.height = "40px";
         });
 
         dropSourceList.forEach(dropSource => {
@@ -136,7 +144,7 @@ function scrollFunction() {
         });
 
         classPickerBarJs.forEach(classPickerBar => {
-            classPickerBar.style.height = "40px"
+            classPickerBar.style.height = "40px";
         });
 
         dropSourceText.forEach(dropSourceText => {
@@ -144,16 +152,20 @@ function scrollFunction() {
         });
 
         classPickerBarJs.forEach(classPickerBar => {
-            classPickerBar.style.top = "70px"
+            classPickerBar.style.top = "70px";
+        });
+
+        attributePickerJs.forEach(attributePicker => {
+            attributePicker.style.marginTop = "0px";
         });
 
     } else {
         dropSourceBarList.forEach(dropSourceBar => {
-            dropSourceBar.style.height = "205px"
+            dropSourceBar.style.height = "205px";
         });
 
         classPickerBarJs.forEach(classPickerBar => {
-            classPickerBar.style.height = "80px"
+            classPickerBar.style.height = "80px";
         });
 
         dropSourceList.forEach(dropSource => {
@@ -166,7 +178,11 @@ function scrollFunction() {
         });
 
         classPickerBarJs.forEach(classPickerBar => {
-            classPickerBar.style.top = "205px"
+            classPickerBar.style.top = "205px";
+        });
+
+        attributePickerJs.forEach(attributePicker => {
+            attributePicker.style.marginTop = "25px";
         });
     }
 }
