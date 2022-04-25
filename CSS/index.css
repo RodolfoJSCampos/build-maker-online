@@ -53,6 +53,13 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #1e1e1e;
+    /*BLOCKING SELECT TEXT START*/
+    user-select: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   /*BLOCKING SELECT TEXT END*/
 }
 
 .dropSourceBar {
@@ -194,8 +201,8 @@ img.dropSource{
 .attributePicker {
     background-color: rgb(80, 80, 80);
     min-width: 120px;
-    max-height: 14px;
-    min-height: 14px;
+    max-height: 30px;
+    min-height: 30px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 20px;
@@ -207,26 +214,25 @@ img.dropSource{
     padding-top: 8px;
     padding-bottom: 8px;
     transition: 0.4s;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 #criticalOption {
-    color: orange;
+    color: #282828;
 }
 
 #hasteOption {
-    color: yellow;
+    color: #282828;
 }
 
 #masteryOption {
-    color: white;
-    background-color: rgb(100, 0, 100);
-    border: solid;
-    border-color: white;
-    border-style: ridge;
+    color: #282828;
 }
 
 #versatilityOption {
-    color: rgb(0, 94, 255);
+    color: #282828;
 }
 
 #criticalOption:hover, #hasteOption:hover, #masteryOption:hover, #versatilityOption:hover, #selectClass:hover, #selectSpec:hover {
@@ -256,8 +262,8 @@ img.dropSource{
 */
 
 #selectClass {
-    background-color: rgb(100, 100, 100);
-    color: #282828;
+    background-color: #69ccf0;
+    color: white;
     height: 40px;
     min-width: 170px;
     margin-top: 14px;
@@ -289,9 +295,9 @@ img.dropSource{
 }
 
 .classPicker img {
-    height: 60px;
-    width: 60px;
-    margin-top: 4px;
+    height: 52px;
+    width: 52px;
+    margin-top: 8px;
     object-fit: contain;
 }
 
