@@ -10,7 +10,8 @@ const classPickerBarById = document.getElementById("classPickerBarId");
 var modalClose = document.getElementsByClassName("close")[0];
 var bodyTag = document.getElementsByTagName("body")[0];
 var modal = document.getElementById("equipmentModal");
-var dungeonSourceClicked, raideSourceClicked, pvpSourceClicked, professionSourceClicked = false;
+var dungeonSourceClicked, raideSourceClicked, pvpSourceClicked, professionSourceClicked,
+    criticalClicked, hasteClicked, masteryClicked, versatilityClicked = false;
 
 $(document).ready(function () {
 
@@ -75,6 +76,18 @@ $(document).ready(function () {
             document.getElementById("dropSourceProfessionId").style.borderStyle = "ridge";
             document.getElementById("dropSourceProfessionId").style.filter = "grayscale(0%)";
             document.getElementById("dropSourceTextProfessionId").style.color = "white";
+        }
+    });
+
+    $('#criticalOption').click(function () {
+        if (criticalClicked == true) {
+            criticalClicked = false;
+            console.log(criticalClicked);
+            document.getElementById("criticalOption").style.backgroundColor = "grey";
+        } else {
+            criticalClicked = true;
+            console.log(criticalClicked);
+            document.getElementById("criticalOption").style.backgroundColor = "orange";
         }
     });
 
@@ -155,9 +168,7 @@ function scrollFunction() {
             classPickerBar.style.top = "70px";
         });
 
-        attributePickerJs.forEach(attributePicker => {
-            attributePicker.style.marginTop = "0px";
-        });
+        
 
     } else {
         dropSourceBarList.forEach(dropSourceBar => {
@@ -181,8 +192,6 @@ function scrollFunction() {
             classPickerBar.style.top = "205px";
         });
 
-        attributePickerJs.forEach(attributePicker => {
-            attributePicker.style.marginTop = "25px";
-        });
+        
     }
 }
