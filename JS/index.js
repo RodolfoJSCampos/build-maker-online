@@ -7,6 +7,8 @@ const classPickerBarJs = document.querySelectorAll('.classPickerBar');
 const attributePickerJs = document.querySelectorAll('.attributePicker');
 const dropSourceBarById = document.getElementById("dropSourceBarId");
 const classPickerBarById = document.getElementById("classPickerBarId");
+const selectClassById = document.getElementById("selectClass");
+const selectSpecById = document.getElementById("selectSpec");
 var modalClose = document.getElementsByClassName("close")[0];
 var bodyTag = document.getElementsByTagName("body")[0];
 var modal = document.getElementById("equipmentModal");
@@ -82,81 +84,85 @@ $(document).ready(function () {
     $('#criticalOption').click(function () {
         if (criticalClicked == true) {
             criticalClicked = false;
-            console.log("Critico OFF: " + criticalClicked);
             document.getElementById("criticalOption").style.backgroundColor = "rgb(80, 80, 80)";
             document.getElementById("criticalOption").style.color = "#282828"
             document.getElementById("criticalOption").style.border = "none";
             document.getElementById("criticalOption").style.paddingTop = "8px";
+            document.getElementById("criticalOption").style.textShadow = "none";
         } else {
             criticalClicked = true;
-            console.log("Critico ON: " + criticalClicked);
             document.getElementById("criticalOption").style.backgroundColor = "OrangeRed";
             document.getElementById("criticalOption").style.color = "white"
             document.getElementById("criticalOption").style.border = "3px solid";
             document.getElementById("criticalOption").style.paddingTop = "5px";
             document.getElementById("criticalOption").style.borderColor = "white";
             document.getElementById("criticalOption").style.borderStyle = "ridge";
+            document.getElementById("criticalOption").style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
         }
     });
 
     $('#hasteOption').click(function () {
         if (hasteClicked == true) {
             hasteClicked = false;
-            console.log("Haste OFF: " + hasteClicked);
             document.getElementById("hasteOption").style.backgroundColor = "rgb(80, 80, 80)";
             document.getElementById("hasteOption").style.color = "#282828"
             document.getElementById("hasteOption").style.border = "none";
             document.getElementById("hasteOption").style.paddingTop = "8px";
+            document.getElementById("hasteOption").style.textShadow = "none";
         } else {
             hasteClicked = true;
-            console.log("Haste ON: " + hasteClicked);
-            document.getElementById("hasteOption").style.backgroundColor = "Goldenrod";
+            document.getElementById("hasteOption").style.backgroundColor = "Gold";
             document.getElementById("hasteOption").style.color = "white"
             document.getElementById("hasteOption").style.border = "3px solid";
             document.getElementById("hasteOption").style.paddingTop = "5px";
             document.getElementById("hasteOption").style.borderColor = "white";
             document.getElementById("hasteOption").style.borderStyle = "ridge";
+            document.getElementById("hasteOption").style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
         }
     });
 
     $('#masteryOption').click(function () {
         if (masteryClicked == true) {
             masteryClicked = false;
-            console.log("Mastery OFF: " + masteryClicked);
             document.getElementById("masteryOption").style.backgroundColor = "rgb(80, 80, 80)";
             document.getElementById("masteryOption").style.color = "#282828"
             document.getElementById("masteryOption").style.border = "none";
             document.getElementById("masteryOption").style.paddingTop = "8px";
+            document.getElementById("masteryOption").style.textShadow = "none";
         } else {
             masteryClicked = true;
-            console.log("Mastery ON: " + masteryClicked);
             document.getElementById("masteryOption").style.backgroundColor = "Purple";
             document.getElementById("masteryOption").style.color = "white"
             document.getElementById("masteryOption").style.border = "3px solid";
             document.getElementById("masteryOption").style.paddingTop = "5px";
             document.getElementById("masteryOption").style.borderColor = "white";
             document.getElementById("masteryOption").style.borderStyle = "ridge";
+            document.getElementById("masteryOption").style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
         }
     });
 
     $('#versatilityOption').click(function () {
         if (versatilityClicked == true) {
             versatilityClicked = false;
-            console.log("Versatility OFF: " + masteryClicked);
             document.getElementById("versatilityOption").style.backgroundColor = "rgb(80, 80, 80)";
             document.getElementById("versatilityOption").style.color = "#282828"
             document.getElementById("versatilityOption").style.border = "none";
             document.getElementById("versatilityOption").style.paddingTop = "8px";
+            document.getElementById("versatilityOption").style.textShadow = "none";
         } else {
             versatilityClicked = true;
-            console.log("Versatility ON: " + masteryClicked);
             document.getElementById("versatilityOption").style.backgroundColor = "DodgerBlue";
             document.getElementById("versatilityOption").style.color = "white"
             document.getElementById("versatilityOption").style.border = "3px solid";
             document.getElementById("versatilityOption").style.paddingTop = "5px";
             document.getElementById("versatilityOption").style.borderColor = "white";
             document.getElementById("versatilityOption").style.borderStyle = "ridge";
+            document.getElementById("versatilityOption").style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
         }
+    });
+
+    $('#selectClass').click(function () {
+        selectClassById.style.height = "300px";
     });
 
     $(btnAddEquipment).click(function () {

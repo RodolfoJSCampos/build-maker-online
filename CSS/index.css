@@ -200,6 +200,7 @@ img.dropSource{
 
 .attributePicker {
     background-color: rgb(80, 80, 80);
+    color: #1f1f1f;
     min-width: 120px;
     max-height: 30px;
     min-height: 30px;
@@ -219,24 +220,8 @@ img.dropSource{
     -webkit-box-sizing: border-box;
 }
 
-#criticalOption {
-    color: #282828;
-}
-
-#hasteOption {
-    color: #282828;
-}
-
-#masteryOption {
-    color: #282828;
-}
-
-#versatilityOption {
-    color: #282828;
-}
-
 #criticalOption:hover, #hasteOption:hover, #masteryOption:hover, #versatilityOption:hover, #selectClass:hover, #selectSpec:hover {
-    color: white;
+    color: white !important;
     cursor: pointer;
     -webkit-box-shadow: 0px 0px 7px 0px rgb(255, 255, 255);
     -moz-box-shadow: 0px 0px 7px 0px rgb(255, 255, 255);
@@ -262,8 +247,8 @@ img.dropSource{
 */
 
 #selectClass {
-    background-color: #69ccf0;
-    color: white;
+    background-color: rgb(100, 100, 100);
+    color: #282828;
     height: 40px;
     min-width: 170px;
     margin-top: 14px;
@@ -308,6 +293,7 @@ img.dropSource{
     min-width: 170px;
     margin-left: 180px;
     margin-top: 14px;
+    padding-left: 5px;
     border-radius: 20px;
     text-align: center;
     position: fixed;
