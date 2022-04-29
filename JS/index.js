@@ -1,12 +1,13 @@
 window.onscroll = function () { scrollFunction() };
-const dropSourceBarList = document.querySelectorAll('.dropSourceBar');
-const dropSourceList = document.querySelectorAll('.dropSource');
+const dropSourceBarJs = document.querySelectorAll('.dropSourceBar');
+const dropSourceJs = document.querySelectorAll('.dropSource');
 const dropSourceText = document.querySelectorAll('.dropSourceText');
 const btnAddEquipment = document.querySelectorAll('.equipImgContainer');
 const classPickerBarJs = document.querySelectorAll('.classPickerBar');
+const classPickerBarById = document.getElementById("classPickerBarId");
+const classPickerById = document.getElementById('classPickerId');
 const attributePickerJs = document.querySelectorAll('.attributePicker');
 const dropSourceBarById = document.getElementById("dropSourceBarId");
-const classPickerBarById = document.getElementById("classPickerBarId");
 const selectClassById = document.getElementById("selectClass");
 const selectSpecById = document.getElementById("selectSpec");
 var modalClose = document.getElementsByClassName("close")[0];
@@ -161,21 +162,58 @@ $(document).ready(function () {
         }
     });
 
-    $( "#selectClass" )
-        .mouseout(function() {
+    $("#selectClass")
+        .mouseout(function () {
             selectClassById.style.height = "40px";
+            selectClassById.style.color = "#282828";
+            selectClassById.style.borderColor = "white";
+            classPickerById.style.borderColor = "#69ccf0";
+            selectClassById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
+            classPickerById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
+            selectClassById.style.cursor = "auto";
+            classPickerById.style.cursor = "auto";
+            
         })
-        .mouseover(function() {
+        .mouseover(function () {
             selectClassById.style.height = "300px";
-    });
+            selectClassById.style.color = "white";
+            selectClassById.style.borderColor = "white";
+            classPickerById.style.borderColor = "white";
+            selectClassById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
+            classPickerById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
+            selectClassById.style.cursor = "pointer";
+            classPickerById.style.cursor = "pointer";
+        });
 
-    $( "#selectSpec" )
-        .mouseout(function() {
+    $("div.classPicker")
+        .mouseout(function () {
+            selectClassById.style.height = "40px";
+            selectClassById.style.color = "#282828";
+            selectClassById.style.borderColor = "white";
+            classPickerById.style.borderColor = "#69ccf0";
+            selectClassById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
+            classPickerById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
+            selectClassById.style.cursor = "auto";
+            classPickerById.style.cursor = "auto";
+        })
+        .mouseover(function () {
+            selectClassById.style.height = "300px";
+            selectClassById.style.color = "white";
+            selectClassById.style.borderColor = "white";
+            classPickerById.style.borderColor = "white";
+            selectClassById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
+            classPickerById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
+            selectClassById.style.cursor = "pointer";
+            classPickerById.style.cursor = "pointer";
+        });
+
+    $("#selectSpec")
+        .mouseout(function () {
             selectSpecById.style.height = "40px";
         })
-        .mouseover(function() {
+        .mouseover(function () {
             selectSpecById.style.height = "300px";
-    });
+        });
 
     $(btnAddEquipment).click(function () {
         modal.style.display = "block";
@@ -229,7 +267,7 @@ $(document).ready(function () {
 
 function scrollFunction() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        dropSourceBarList.forEach(dropSourceBar => {
+        dropSourceBarJs.forEach(dropSourceBar => {
             dropSourceBar.style.height = "70px";
         });
 
@@ -237,7 +275,7 @@ function scrollFunction() {
             classPickerBar.style.height = "40px";
         });
 
-        dropSourceList.forEach(dropSource => {
+        dropSourceJs.forEach(dropSource => {
             dropSource.classList.remove('dropSource', 'dropSourceSmall');
             dropSource.classList.add('dropSourceSmall');
         });
@@ -254,10 +292,10 @@ function scrollFunction() {
             classPickerBar.style.top = "70px";
         });
 
-        
+
 
     } else {
-        dropSourceBarList.forEach(dropSourceBar => {
+        dropSourceBarJs.forEach(dropSourceBar => {
             dropSourceBar.style.height = "205px";
         });
 
@@ -265,7 +303,7 @@ function scrollFunction() {
             classPickerBar.style.height = "80px";
         });
 
-        dropSourceList.forEach(dropSource => {
+        dropSourceJs.forEach(dropSource => {
             dropSource.classList.remove('dropSource', 'dropSourceSmall');
             dropSource.classList.add('dropSource');
         });
@@ -278,6 +316,6 @@ function scrollFunction() {
             classPickerBar.style.top = "205px";
         });
 
-        
+
     }
 }

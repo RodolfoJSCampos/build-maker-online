@@ -220,7 +220,7 @@ img.dropSource{
     -webkit-box-sizing: border-box;
 }
 
-#criticalOption:hover, #hasteOption:hover, #masteryOption:hover, #versatilityOption:hover, #selectClass:hover, #selectSpec:hover {
+#criticalOption:hover, #hasteOption:hover, #masteryOption:hover, #versatilityOption:hover, #selectSpec:hover {
     color: white !important;
     cursor: pointer;
     -webkit-box-shadow: 0px 0px 7px 0px rgb(255, 255, 255);
@@ -262,7 +262,7 @@ img.dropSource{
     transition: 0.4s !important;
 }
 
-#demonHunterOption {
+#emptyOption {
     padding-right: 18px;
     padding-top: 12px;
 }
@@ -278,6 +278,11 @@ img.dropSource{
     border: solid;
     border-style: ridge;
     border-color: #69ccf0;
+    z-index: 98;
+}
+
+#classPickerId {
+    transition: 0.4s;
 }
 
 .classPicker img {
