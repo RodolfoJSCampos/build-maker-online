@@ -161,8 +161,20 @@ $(document).ready(function () {
         }
     });
 
-    $('#selectClass').click(function () {
-        selectClassById.style.height = "300px";
+    $( "#selectClass" )
+        .mouseout(function() {
+            selectClassById.style.height = "40px";
+        })
+        .mouseover(function() {
+            selectClassById.style.height = "300px";
+    });
+
+    $( "#selectSpec" )
+        .mouseout(function() {
+            selectSpecById.style.height = "40px";
+        })
+        .mouseover(function() {
+            selectSpecById.style.height = "300px";
     });
 
     $(btnAddEquipment).click(function () {
