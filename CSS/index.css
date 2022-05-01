@@ -229,23 +229,6 @@ img.dropSource{
     transition: 0s;
 }
 
-/*
-    CLASS COLORS PATTERN
-    Hunter: #abd473;
-    Rogue: #fff569;
-    Warlock: #9482c9;
-    Druid: #ff7d0a;
-    Priest: #fff;
-    Mage: #69ccf0;
-    Demon Hunter: #a330c9;
-    Death Knight: #c41f3b;
-    Monk: #00ff96;
-    Paladin: #f58cba;
-    Warrior: #c79c6e;
-    Shaman: #0070de;
-    Evoker: #33937F;
-*/
-
 #selectClass {
     background-color: rgb(100, 100, 100);
     color: #282828;
@@ -260,6 +243,69 @@ img.dropSource{
     font-weight: 700;
     font-size: medium;
     transition: 0.4s !important;
+    overflow: hidden;
+}
+
+.classOption {
+    height: 30px;
+    padding-top: 12px;
+}
+
+.classOption:hover {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black;
+    color: white;
+}
+
+#deathKnightOption:hover {
+    background-color: #c41f3b;
+}
+
+#demonHunterOption:hover {
+    background-color: #a330c9;
+}
+
+#druidOption:hover {
+    background-color: #ff7d0a;
+}
+
+#evokerOption:hover {
+    background-color: #33937F;
+}
+
+#hunterOption:hover {
+    background-color: #abd473;
+}
+
+#mageOption:hover {
+    background-color: #69ccf0;
+}
+
+#monkOption:hover {
+    background-color: #00ff96;
+}
+
+#paladinOption:hover {
+    background-color: #f58cba;
+}
+
+#priestOption:hover {
+    background-color: #fff;
+}
+
+#rogueOption:hover {
+    background-color: #fff569;
+}
+
+#shamanOption:hover {
+    background-color: #0070de;
+}
+
+#warlockOption:hover {
+    background-color: #9482c9;
+}
+
+#warriorOption:hover {
+    background-color: #c79c6e;
 }
 
 #emptyOption {
@@ -277,7 +323,7 @@ img.dropSource{
     position: fixed;
     border: solid;
     border-style: ridge;
-    border-color: #69ccf0;
+    border-color: #aeaeae;
     z-index: 98;
 }
 

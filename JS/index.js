@@ -15,6 +15,21 @@ var bodyTag = document.getElementsByTagName("body")[0];
 var modal = document.getElementById("equipmentModal");
 var dungeonSourceClicked, raideSourceClicked, pvpSourceClicked, professionSourceClicked,
     criticalClicked, hasteClicked, masteryClicked, versatilityClicked = false;
+const colorNone = "#aeaeae";
+const colorHunter = "#abd473";
+const colorRogue = "#fff569";
+const colorWarlock = "#9482c9";
+const colorDruid = "#ff7d0a";
+const colorPriest = "#fff";
+const colorMage = "#69ccf0";
+const colorDemonHunter = "#a330c9";
+const colorDeathKnight = "#c41f3b";
+const colorMonk = "#00ff96";
+const colorPaladin = "#f58cba";
+const colorWarrior = "#c79c6e";
+const colorShaman = "#0070de";
+const colorEvoker = "#33937F";
+var currentColor = colorNone;
 
 $(document).ready(function () {
 
@@ -165,9 +180,7 @@ $(document).ready(function () {
     $("#selectClass")
         .mouseout(function () {
             selectClassById.style.height = "40px";
-            selectClassById.style.color = "#282828";
-            selectClassById.style.borderColor = "white";
-            classPickerById.style.borderColor = "#69ccf0";
+            classPickerById.style.borderColor = currentColor;
             selectClassById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
             classPickerById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
             selectClassById.style.cursor = "auto";
@@ -175,9 +188,7 @@ $(document).ready(function () {
             
         })
         .mouseover(function () {
-            selectClassById.style.height = "300px";
-            selectClassById.style.color = "white";
-            selectClassById.style.borderColor = "white";
+            selectClassById.style.height = "587px";
             classPickerById.style.borderColor = "white";
             selectClassById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
             classPickerById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
@@ -188,18 +199,14 @@ $(document).ready(function () {
     $("div.classPicker")
         .mouseout(function () {
             selectClassById.style.height = "40px";
-            selectClassById.style.color = "#282828";
-            selectClassById.style.borderColor = "white";
-            classPickerById.style.borderColor = "#69ccf0";
+            classPickerById.style.borderColor = currentColor;
             selectClassById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
             classPickerById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
             selectClassById.style.cursor = "auto";
             classPickerById.style.cursor = "auto";
         })
         .mouseover(function () {
-            selectClassById.style.height = "300px";
-            selectClassById.style.color = "white";
-            selectClassById.style.borderColor = "white";
+            selectClassById.style.height = "587px";
             classPickerById.style.borderColor = "white";
             selectClassById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
             classPickerById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
