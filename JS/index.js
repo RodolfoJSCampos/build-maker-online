@@ -9,6 +9,21 @@ const classPickerById = document.getElementById('classPickerId');
 const attributePickerJs = document.querySelectorAll('.attributePicker');
 const dropSourceBarById = document.getElementById("dropSourceBarId");
 const selectClassById = document.getElementById("selectClass");
+const deathKnightOptionJs = document.getElementById("deathKnightOption");
+const demonHunterOptionJs = document.getElementById("demonHunterOption");
+const druidOptionJs = document.getElementById("druidOption");
+const evokerOptionJs = document.getElementById("evokerOption");
+const hunterOptionJs = document.getElementById("hunterOption");
+const mageOptionJs = document.getElementById("mageOption");
+const monkOptionJs = document.getElementById("monkOption");
+const paladinOptionJs = document.getElementById("paladinOption");
+const priestOptionJs = document.getElementById("priestOption");
+const rogueOptionJs = document.getElementById("rogueOption");
+const shamanOptionJs = document.getElementById("shamanOption");
+const warlockOptionJs = document.getElementById("warlockOption");
+const warriorOptionJs = document.getElementById("warriorOption");
+const imgClassPickerIdJs = document.getElementById("imgClassPickerId");
+const emptyOptionJs = document.getElementById("emptyOption");
 const selectSpecById = document.getElementById("selectSpec");
 var modalClose = document.getElementsByClassName("close")[0];
 var bodyTag = document.getElementsByTagName("body")[0];
@@ -30,6 +45,7 @@ const colorWarrior = "#c79c6e";
 const colorShaman = "#0070de";
 const colorEvoker = "#33937F";
 var currentColor = colorNone;
+var classSelected = "none";
 
 $(document).ready(function () {
 
@@ -179,40 +195,190 @@ $(document).ready(function () {
 
     $("#selectClass")
         .mouseout(function () {
+            if (classSelected == "none"){
+                imgClassPickerIdJs.style.opacity = "50%";
+            };
             selectClassById.style.height = "40px";
             classPickerById.style.borderColor = currentColor;
-            selectClassById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
             classPickerById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
             selectClassById.style.cursor = "auto";
             classPickerById.style.cursor = "auto";
-            
+            selectClassById.style.borderRadius = "20px";
         })
         .mouseover(function () {
+            imgClassPickerIdJs.style.opacity = "100%";
             selectClassById.style.height = "587px";
             classPickerById.style.borderColor = "white";
-            selectClassById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
             classPickerById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
             selectClassById.style.cursor = "pointer";
             classPickerById.style.cursor = "pointer";
+            selectClassById.style.borderRadius = "20px 20px 0px 0px";
         });
 
     $("div.classPicker")
         .mouseout(function () {
-            selectClassById.style.height = "40px";
+            if (classSelected == "none"){
+                imgClassPickerIdJs.style.opacity = "50%";
+            };
             classPickerById.style.borderColor = currentColor;
-            selectClassById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
+            selectClassById.style.height = "40px";
             classPickerById.style.boxShadow = "0px 0px 0px 0px rgb(255, 255, 255)";
             selectClassById.style.cursor = "auto";
             classPickerById.style.cursor = "auto";
+            selectClassById.style.borderRadius = "20px";
         })
         .mouseover(function () {
+            imgClassPickerIdJs.style.opacity = "100%";
             selectClassById.style.height = "587px";
             classPickerById.style.borderColor = "white";
-            selectClassById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
             classPickerById.style.boxShadow = "0px 0px 7px 0px rgb(255, 255, 255)";
             selectClassById.style.cursor = "pointer";
             classPickerById.style.cursor = "pointer";
+            selectClassById.style.borderRadius = "20px 20px 0px 0px";
         });
+
+    $(deathKnightOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/DeathKnight.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorDeathKnight;
+        emptyOptionJs.textContent = "Death Knight";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(demonHunterOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/DemonHunter.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorDemonHunter;
+        emptyOptionJs.textContent = "Demon Hunter";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(druidOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Druid.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorDruid;
+        emptyOptionJs.textContent = "Druid";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(evokerOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Evoker.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorEvoker;
+        emptyOptionJs.textContent = "Evoker";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(hunterOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Hunter.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorHunter;
+        emptyOptionJs.textContent = "Hunter";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(mageOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Mage.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorMage;
+        emptyOptionJs.textContent = "Mage";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(monkOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Monk.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorMonk;
+        emptyOptionJs.textContent = "Monk";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(paladinOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Paladin.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorPaladin;
+        emptyOptionJs.textContent = "Paladin";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(priestOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Priest.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorPriest;
+        emptyOptionJs.textContent = "Priest";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(rogueOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Rogue.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorRogue;
+        emptyOptionJs.textContent = "Rogue";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(shamanOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Shaman.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorShaman;
+        emptyOptionJs.textContent = "Shaman";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(warlockOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Warlock.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorWarlock;
+        emptyOptionJs.textContent = "Warlock";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
+
+    $(warriorOptionJs).click(function () {
+        imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Warrior.png";
+        imgClassPickerIdJs.style.opacity = "100%";
+        currentColor = colorWarrior;
+        emptyOptionJs.textContent = "Warrior";
+        classSelected = emptyOptionJs.textContent;
+        emptyOptionJs.style.backgroundColor = currentColor;
+        emptyOptionJs.style.color = "white";
+        emptyOptionJs.style.textShadow = "1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black";
+    });
 
     $("#selectSpec")
         .mouseout(function () {
