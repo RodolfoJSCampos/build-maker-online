@@ -220,7 +220,7 @@ img.dropSource{
     -webkit-box-sizing: border-box;
 }
 
-#criticalOption:hover, #hasteOption:hover, #masteryOption:hover, #versatilityOption:hover, #selectSpec:hover {
+#criticalOption:hover, #hasteOption:hover, #masteryOption:hover, #versatilityOption:hover {
     color: white !important;
     cursor: pointer;
     -webkit-box-shadow: 0px 0px 7px 0px rgb(255, 255, 255);
@@ -356,12 +356,24 @@ img.dropSource{
     font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
     font-weight: 700;
     font-size: medium;
+    cursor: pointer;
+    overflow: hidden;
     transition: 0.4s !important;
 }
 
-#specOption {
+#specSelectedId {
     padding-left: 18px;
     padding-top: 12px;
+}
+
+.specOption {
+    height: 30px;
+    padding-top: 12px;
+}
+
+.specOption:hover {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black;
+    color: white;
 }
 
 .equipPicker {

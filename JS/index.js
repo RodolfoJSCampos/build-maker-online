@@ -195,7 +195,7 @@ $(document).ready(function () {
 
     $("#selectClass")
         .mouseout(function () {
-            if (classSelected == "none"){
+            if (classSelected == "none") {
                 imgClassPickerIdJs.style.opacity = "50%";
             };
             selectClassById.style.height = "40px";
@@ -217,7 +217,7 @@ $(document).ready(function () {
 
     $("div.classPicker")
         .mouseout(function () {
-            if (classSelected == "none"){
+            if (classSelected == "none") {
                 imgClassPickerIdJs.style.opacity = "50%";
             };
             classPickerById.style.borderColor = currentColor;
@@ -383,9 +383,93 @@ $(document).ready(function () {
     $("#selectSpec")
         .mouseout(function () {
             selectSpecById.style.height = "40px";
+            selectSpecById.style.borderRadius = "20px";
         })
         .mouseover(function () {
-            selectSpecById.style.height = "300px";
+            selectSpecById.style.borderRadius = "20px 20px 0px 0px";
+            switch (classSelected) {
+                case "none":
+                    selectSpecById.style.borderRadius = "20px";
+                    
+                    break;
+                case "Death Knight":
+                    selectSpecById.style.height = "168px";
+                    document.getElementById("spec1").textContent = "Blood";
+                    document.getElementById("spec2").textContent = "Frost";
+                    document.getElementById("spec3").textContent = "Unholy";
+                    break;
+                case "Demon Hunter":
+                    selectSpecById.style.height = "126px";
+                    document.getElementById("spec1").textContent = "Havoc";
+                    document.getElementById("spec2").textContent = "Vengeance";
+                    break;
+                case "Druid":
+                    selectSpecById.style.height = "210px";
+                    document.getElementById("spec1").textContent = "Balance";
+                    document.getElementById("spec2").textContent = "Feral";
+                    document.getElementById("spec3").textContent = "Guardian";
+                    document.getElementById("spec4").textContent = "Restoration";
+                    break;
+                case "Evoker":
+                    selectSpecById.style.height = "126px";
+                    document.getElementById("spec1").textContent = "Devastation";
+                    document.getElementById("spec2").textContent = "Preservation";
+                    break;
+                case "Hunter":
+                    selectSpecById.style.height = "168px";
+                    document.getElementById("spec1").textContent = "Beast Mastery";
+                    document.getElementById("spec2").textContent = "Marksmanship";
+                    document.getElementById("spec3").textContent = "Survival";
+                    break;
+                case "Mage":
+                    selectSpecById.style.height = "168px";
+                    document.getElementById("spec1").textContent = "Arcane";
+                    document.getElementById("spec2").textContent = "Fire";
+                    document.getElementById("spec3").textContent = "Frost";
+                    break;
+                case "Monk":
+                    selectSpecById.style.height = "168px";
+                    document.getElementById("spec1").textContent = "Brewmaster";
+                    document.getElementById("spec2").textContent = "Mistweaver";
+                    document.getElementById("spec3").textContent = "Windwalker";
+                    break;
+                case "Paladin":
+                    selectSpecById.style.height = "168px";
+                    document.getElementById("spec1").textContent = "Holy";
+                    document.getElementById("spec2").textContent = "Protection";
+                    document.getElementById("spec3").textContent = "Retribution";
+                    break;
+                case "Priest":
+                    selectSpecById.style.height = "168px";
+                    document.getElementById("spec1").textContent = "Discipline";
+                    document.getElementById("spec2").textContent = "Holy";
+                    document.getElementById("spec3").textContent = "Shadow";
+                    break;
+                case "Rogue":
+                    selectSpecById.style.height = "168px";
+                    document.getElementById("spec1").textContent = "Assassination";
+                    document.getElementById("spec2").textContent = "Outlaw";
+                    document.getElementById("spec3").textContent = "Subtlety";
+                    break;
+                case "Shaman":
+                    selectSpecById.style.height = "168px";
+                    document.getElementById("spec1").textContent = "Elemental";
+                    document.getElementById("spec2").textContent = "Enhancement";
+                    document.getElementById("spec3").textContent = "Restoration";
+                    break;
+                case "Warlock":
+                    selectSpecById.style.height = "168px";
+                    document.getElementById("spec1").textContent = "Affliction";
+                    document.getElementById("spec2").textContent = "Demonology";
+                    document.getElementById("spec3").textContent = "Destruction";
+                    break;
+                case "Warrior":
+                    selectSpecById.style.height = "168px";
+                    document.getElementById("spec1").textContent = "Arms";
+                    document.getElementById("spec2").textContent = "Fury";
+                    document.getElementById("spec3").textContent = "Protection";
+                    break;
+            }
         });
 
     $(btnAddEquipment).click(function () {
