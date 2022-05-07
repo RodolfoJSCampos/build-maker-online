@@ -339,6 +339,10 @@ img.dropSource{
     transition: 0.4s;
 }
 
+.classIconLoader {
+    display: none;
+}
+
 #selectSpec {
     background-color: rgb(100, 100, 100);
     color: #282828;
