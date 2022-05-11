@@ -517,9 +517,7 @@ $(document).ready(function () {
         fetch("./JS/EquipmentsData.json")
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                document.getElementById("innerModal").innerText = JSON.stringify(data);
-                document.getElementById("innerModal").style.backgroundColor = "darkblue";
+                console.log(JSON.stringify(data));
             })
             .catch((error) => {
                 console.error(error);
