@@ -519,6 +519,7 @@ $(document).ready(function () {
             .then(data => {
                 console.log(data);
                 document.getElementById("innerModal").innerText = JSON.stringify(data);
+                document.getElementById("innerModal").style.backgroundColor = "darkblue";
             })
             .catch((error) => {
                 console.error(error);
