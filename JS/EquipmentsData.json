@@ -1,4 +1,4 @@
-var DATA = {
+[{
     "dungeonEquipments": [
         {
             "id": "1",
@@ -710,4 +710,4 @@ var DATA = {
     
         }
     ]
-};
+}]

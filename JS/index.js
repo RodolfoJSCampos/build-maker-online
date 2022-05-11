@@ -480,6 +480,17 @@ $(document).ready(function () {
         dropSourceBarById.style.transition = "0s";
         classPickerBarById.style.right = "8px";
         classPickerBarById.style.transition = "0s";
+
+        fetch("./JS/EquipmentsData.json")
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch((error) =>{
+            console.error(error);
+        })
+
+        /*
         //MODAL TEST START
         document.getElementById("innerModal").innerText = DATA.dungeonEquipments[12].dungeon;
         document.getElementById("innerModal").innerText += ". __________________________________________________ .";
@@ -493,6 +504,7 @@ $(document).ready(function () {
         document.getElementById("innerModal").innerText += ". __________________________________________________ .";
         document.getElementById("innerModal").innerText += DATA.dungeonEquipments[12].bonus.Use;
         //MODAL TEST END
+        */
     });
 
     $(modalClose).click(function () {
@@ -549,8 +561,6 @@ function scrollFunction() {
             classPickerBar.style.top = "70px";
         });
 
-
-
     } else {
         dropSourceBarJs.forEach(dropSourceBar => {
             dropSourceBar.style.height = "205px";
@@ -572,7 +582,5 @@ function scrollFunction() {
         classPickerBarJs.forEach(classPickerBar => {
             classPickerBar.style.top = "205px";
         });
-
-
     }
 }

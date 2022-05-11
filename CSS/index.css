@@ -383,17 +383,24 @@ img.dropSource{
 }
 
 .charPlace {
+    display: flex;
+    flex-direction: column;
     background: #171717;
     border: 1px;
     border-style: solid;
     border-color: rgb(50, 50, 50);
 }
 
-.charImage {
-    width: auto;
-    height: 523px;
-    margin-left: 50px;
-    margin-right: 50px;
+.charImageArea {
+    min-width: 544px;
+    max-width: 544px;
+    min-height: 527px;
+    max-height: 527px;
+    text-align: center;
+}
+
+#charImage {
+    object-fit: contain;
 }
 
 .equipment {
