@@ -369,6 +369,7 @@ img.dropSource{
 .specOption {
     height: 30px;
     padding-top: 12px;
+    padding-left: 5px;
 }
 
 .specOption:hover {

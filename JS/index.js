@@ -387,10 +387,11 @@ $(document).ready(function () {
         })
         .mouseover(function () {
             selectSpecById.style.borderRadius = "20px 20px 0px 0px";
+
             switch (classSelected) {
                 case "none":
                     selectSpecById.style.borderRadius = "20px";
-                    
+
                     break;
                 case "Death Knight":
                     selectSpecById.style.height = "168px";
@@ -472,6 +473,38 @@ $(document).ready(function () {
             }
         });
 
+    $("#spec1")
+        .mouseout(function () {
+            document.getElementById("spec1").style.backgroundColor = "rgb(100, 100, 100)";
+        })
+        .mouseover(function () {
+            document.getElementById("spec1").style.backgroundColor = "rgb(145, 0, 0)";
+        });
+
+    $("#spec2")
+        .mouseout(function () {
+            document.getElementById("spec2").style.backgroundColor = "rgb(100, 100, 100)";
+        })
+        .mouseover(function () {
+            document.getElementById("spec2").style.backgroundColor = "rgb(145, 0, 0)";
+        });
+
+    $("#spec3")
+        .mouseout(function () {
+            document.getElementById("spec3").style.backgroundColor = "rgb(100, 100, 100)";
+        })
+        .mouseover(function () {
+            document.getElementById("spec3").style.backgroundColor = "rgb(145, 0, 0)";
+        });
+
+    $("#spec4")
+        .mouseout(function () {
+            document.getElementById("spec4").style.backgroundColor = "rgb(100, 100, 100)";
+        })
+        .mouseover(function () {
+            document.getElementById("spec4").style.backgroundColor = "rgb(145, 0, 0)";
+        });
+
     $(btnAddEquipment).click(function () {
         modal.style.display = "block";
         bodyTag.style.overflowY = "hidden";
@@ -482,13 +515,14 @@ $(document).ready(function () {
         classPickerBarById.style.transition = "0s";
 
         fetch("./JS/EquipmentsData.json")
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch((error) =>{
-            console.error(error);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                document.getElementById("innerModal").innerText = JSON.stringify(data);
+            })
+            .catch((error) => {
+                console.error(error);
+            })
 
         /*
         //MODAL TEST START
