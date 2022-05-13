@@ -25,6 +25,12 @@ const warriorOptionJs = document.getElementById("warriorOption");
 const imgClassPickerIdJs = document.getElementById("imgClassPickerId");
 const emptyOptionJs = document.getElementById("emptyOption");
 const selectSpecById = document.getElementById("selectSpec");
+const spec1Js = document.getElementById("spec1");
+const spec2Js = document.getElementById("spec2");
+const spec3Js = document.getElementById("spec3");
+const spec4Js = document.getElementById("spec4");
+const imgSpecPickerJs = document.getElementById("imgSpecPickerId");
+const specSelectedJs = document.getElementById("specSelectedId");
 var modalClose = document.getElementsByClassName("close")[0];
 var bodyTag = document.getElementsByTagName("body")[0];
 var modal = document.getElementById("equipmentModal");
@@ -45,7 +51,15 @@ const colorWarrior = "#c79c6e";
 const colorShaman = "#0070de";
 const colorEvoker = "#33937F";
 var currentColor = colorNone;
-var classSelected = "none";
+var classSelected, specSelected = "none";
+
+function resetSpec(){
+    specSelected = "none";
+    specSelectedJs.innerText = "Select a Spec";
+    specSelectedJs.style.backgroundColor = "rgb(100, 100, 100)";
+    specSelectedJs.style.color = "#282828";
+    imgSpecPickerJs.style.visibility = "hidden";
+}
 
 $(document).ready(function () {
 
@@ -238,6 +252,7 @@ $(document).ready(function () {
         });
 
     $(deathKnightOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/DeathKnight.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorDeathKnight;
@@ -249,6 +264,7 @@ $(document).ready(function () {
     });
 
     $(demonHunterOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/DemonHunter.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorDemonHunter;
@@ -260,6 +276,7 @@ $(document).ready(function () {
     });
 
     $(druidOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Druid.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorDruid;
@@ -271,6 +288,7 @@ $(document).ready(function () {
     });
 
     $(evokerOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Evoker.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorEvoker;
@@ -282,6 +300,7 @@ $(document).ready(function () {
     });
 
     $(hunterOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Hunter.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorHunter;
@@ -293,6 +312,7 @@ $(document).ready(function () {
     });
 
     $(mageOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Mage.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorMage;
@@ -304,6 +324,7 @@ $(document).ready(function () {
     });
 
     $(monkOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Monk.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorMonk;
@@ -315,6 +336,7 @@ $(document).ready(function () {
     });
 
     $(paladinOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Paladin.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorPaladin;
@@ -326,6 +348,7 @@ $(document).ready(function () {
     });
 
     $(priestOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Priest.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorPriest;
@@ -337,6 +360,7 @@ $(document).ready(function () {
     });
 
     $(rogueOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Rogue.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorRogue;
@@ -348,6 +372,7 @@ $(document).ready(function () {
     });
 
     $(shamanOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Shaman.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorShaman;
@@ -359,6 +384,7 @@ $(document).ready(function () {
     });
 
     $(warlockOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Warlock.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorWarlock;
@@ -370,6 +396,7 @@ $(document).ready(function () {
     });
 
     $(warriorOptionJs).click(function () {
+        resetSpec();
         imgClassPickerIdJs.src = "./Images/Icons/ClassIcons/Warrior.png";
         imgClassPickerIdJs.style.opacity = "100%";
         currentColor = colorWarrior;
@@ -389,10 +416,6 @@ $(document).ready(function () {
             selectSpecById.style.borderRadius = "20px 20px 0px 0px";
 
             switch (classSelected) {
-                case "none":
-                    selectSpecById.style.borderRadius = "20px";
-
-                    break;
                 case "Death Knight":
                     selectSpecById.style.height = "168px";
                     document.getElementById("spec1").textContent = "Blood";
@@ -470,7 +493,20 @@ $(document).ready(function () {
                     document.getElementById("spec2").textContent = "Fury";
                     document.getElementById("spec3").textContent = "Protection";
                     break;
+                default:
+                    selectSpecById.style.borderRadius = "20px";
+                    break;
             }
+        });
+
+    $("#specSelectedId")
+        .mouseout(function () {
+            if (specSelected == "none"){
+                specSelectedJs.style.color = "#282828";
+            }
+        })
+        .mouseover(function () {
+            specSelectedJs.style.color = "white";
         });
 
     $("#spec1")
@@ -478,7 +514,49 @@ $(document).ready(function () {
             document.getElementById("spec1").style.backgroundColor = "rgb(100, 100, 100)";
         })
         .mouseover(function () {
-            document.getElementById("spec1").style.backgroundColor = "rgb(145, 0, 0)";
+            switch (classSelected) {
+                case "Death Knight":
+                    spec1Js.style.backgroundColor = "#0e1a37";
+                    break;
+                case "Demon Hunter":
+                    spec1Js.style.backgroundColor = "#410001";
+                    break;
+                case "Druid":
+                    spec1Js.style.backgroundColor = "#410001";
+                    break;
+                case "Evoker":
+                    spec1Js.style.backgroundColor = "#410001";
+                    break;
+                case "Hunter":
+                    spec1Js.style.backgroundColor = "#410001";
+                    break;
+                case "Mage":
+                    spec1Js.style.backgroundColor = "#410001";
+                    break;
+                case "Monk":
+                    spec1Js.style.backgroundColor = "#0e1a37";
+                    break;
+                case "Paladin":
+                    spec1Js.style.backgroundColor = "#051f23";
+                    break;
+                case "Priest":
+                    spec1Js.style.backgroundColor = "#051f23";
+                    break;
+                case "Rogue":
+                    spec1Js.style.backgroundColor = "#410001";
+                    break;
+                case "Shaman":
+                    spec1Js.style.backgroundColor = "#410001";
+                    break;
+                case "Warlock":
+                    spec1Js.style.backgroundColor = "#410001";
+                    break;
+                case "Warrior":
+                    spec1Js.style.backgroundColor = "#410001";
+                    break;
+                default:
+                    break;
+            }
         });
 
     $("#spec2")
@@ -486,7 +564,49 @@ $(document).ready(function () {
             document.getElementById("spec2").style.backgroundColor = "rgb(100, 100, 100)";
         })
         .mouseover(function () {
-            document.getElementById("spec2").style.backgroundColor = "rgb(145, 0, 0)";
+            switch (classSelected) {
+                case "Death Knight":
+                    spec2Js.style.backgroundColor = "#410001";
+                    break;
+                case "Demon Hunter":
+                    spec2Js.style.backgroundColor = "#0e1a37";
+                    break;
+                case "Druid":
+                    spec2Js.style.backgroundColor = "#410001";
+                    break;
+                case "Evoker":
+                    spec2Js.style.backgroundColor = "#051f23";
+                    break;
+                case "Hunter":
+                    spec2Js.style.backgroundColor = "#410001";
+                    break;
+                case "Mage":
+                    spec2Js.style.backgroundColor = "#410001";
+                    break;
+                case "Monk":
+                    spec2Js.style.backgroundColor = "#051f23";
+                    break;
+                case "Paladin":
+                    spec2Js.style.backgroundColor = "#0e1a37";
+                    break;
+                case "Priest":
+                    spec2Js.style.backgroundColor = "#051f23";
+                    break;
+                case "Rogue":
+                    spec2Js.style.backgroundColor = "#410001";
+                    break;
+                case "Shaman":
+                    spec2Js.style.backgroundColor = "#410001";
+                    break;
+                case "Warlock":
+                    spec2Js.style.backgroundColor = "#410001";
+                    break;
+                case "Warrior":
+                    spec2Js.style.backgroundColor = "#410001";
+                    break;
+                default:
+                    break;
+            }
         });
 
     $("#spec3")
@@ -494,7 +614,43 @@ $(document).ready(function () {
             document.getElementById("spec3").style.backgroundColor = "rgb(100, 100, 100)";
         })
         .mouseover(function () {
-            document.getElementById("spec3").style.backgroundColor = "rgb(145, 0, 0)";
+            switch (classSelected) {
+                case "Death Knight":
+                    spec3Js.style.backgroundColor = "#410001";
+                    break;
+                case "Druid":
+                    spec3Js.style.backgroundColor = "#0e1a37";
+                    break;
+                case "Hunter":
+                    spec3Js.style.backgroundColor = "#410001";
+                    break;
+                case "Mage":
+                    spec3Js.style.backgroundColor = "#410001";
+                    break;
+                case "Monk":
+                    spec3Js.style.backgroundColor = "#410001";
+                    break;
+                case "Paladin":
+                    spec3Js.style.backgroundColor = "#410001";
+                    break;
+                case "Priest":
+                    spec3Js.style.backgroundColor = "#410001";
+                    break;
+                case "Rogue":
+                    spec3Js.style.backgroundColor = "#410001";
+                    break;
+                case "Shaman":
+                    spec3Js.style.backgroundColor = "#051f23";
+                    break;
+                case "Warlock":
+                    spec3Js.style.backgroundColor = "#410001";
+                    break;
+                case "Warrior":
+                    spec3Js.style.backgroundColor = "#0e1a37";
+                    break;
+                default:
+                    break;
+            }
         });
 
     $("#spec4")
@@ -502,8 +658,346 @@ $(document).ready(function () {
             document.getElementById("spec4").style.backgroundColor = "rgb(100, 100, 100)";
         })
         .mouseover(function () {
-            document.getElementById("spec4").style.backgroundColor = "rgb(145, 0, 0)";
+            switch (classSelected) {
+                case "Druid":
+                    spec4Js.style.backgroundColor = "#051f23";
+                    break;
+                default:
+                    break;
+            }
         });
+
+    $(spec1Js).click(function () {
+        switch (classSelected) {
+            case "Death Knight":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                break;
+            case "Demon Hunter":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Druid":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Evoker":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Hunter":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Mage":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Monk":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                break;
+            case "Paladin":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                break;
+            case "Priest":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                break;
+            case "Rogue":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Shaman":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Warlock":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Warrior":
+                specSelected = spec1Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            default:
+                break;
+        }
+    });
+
+    $(spec2Js).click(function () {
+        switch (classSelected) {
+            case "Death Knight":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Demon Hunter":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                break;
+            case "Druid":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Evoker":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                break;
+            case "Hunter":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Mage":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Monk":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                break;
+            case "Paladin":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                break;
+            case "Priest":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                break;
+            case "Rogue":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Shaman":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Warlock":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Warrior":
+                specSelected = spec2Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            default:
+                break;
+        }
+    });
+
+    $(spec3Js).click(function () {
+        switch (classSelected) {
+            case "Death Knight":
+                specSelected = spec3Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Druid":
+                specSelected = spec3Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                break;
+            case "Hunter":
+                specSelected = spec3Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Mage":
+                specSelected = spec3Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Monk":
+                specSelected = spec3Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Paladin":
+                specSelected = spec3Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Priest":
+                specSelected = spec3Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Rogue":
+                specSelected = spec3Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Shaman":
+                specSelected = spec3Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                break;
+            case "Warlock":
+                specSelected = spec3Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                break;
+            case "Warrior":
+                specSelected = spec3Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                break;
+            default:
+                break;
+        }
+    });
+
+    $(spec4Js).click(function () {
+        switch (classSelected) {
+            case "Druid":
+                specSelected = spec4Js.innerText;
+                specSelectedJs.innerText = specSelected;
+                specSelectedJs.style.backgroundColor = spec4Js.style.backgroundColor;
+                specSelectedJs.style.color = "white";
+                imgSpecPickerJs.style.visibility = "visible";
+                imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                break;
+            default:
+                break;
+        }
+    });
 
     $(btnAddEquipment).click(function () {
         modal.style.display = "block";
@@ -517,7 +1011,10 @@ $(document).ready(function () {
         fetch("./JS/EquipmentsData.json")
             .then(res => res.json())
             .then(data => {
-                console.log(JSON.stringify(data));
+                console.log(data);
+                console.log(data[0].dungeonEquipments[0].id);
+                console.log(data[0].dungeonEquipments[0].name);
+                console.log(data[0].dungeonEquipments[0].stat.critical);
             })
             .catch((error) => {
                 console.error(error);
