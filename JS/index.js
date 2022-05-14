@@ -24,7 +24,8 @@ const warlockOptionJs = document.getElementById("warlockOption");
 const warriorOptionJs = document.getElementById("warriorOption");
 const imgClassPickerIdJs = document.getElementById("imgClassPickerId");
 const emptyOptionJs = document.getElementById("emptyOption");
-const selectSpecById = document.getElementById("selectSpec");
+const selectSpecByJs = document.getElementById("selectSpec");
+const specSelectedAreaJs = document.getElementById("specSelectedArea");
 const spec1Js = document.getElementById("spec1");
 const spec2Js = document.getElementById("spec2");
 const spec3Js = document.getElementById("spec3");
@@ -56,9 +57,9 @@ var classSelected, specSelected = "none";
 function resetSpec(){
     specSelected = "none";
     specSelectedJs.innerText = "Select a Spec";
-    specSelectedJs.style.backgroundColor = "rgb(100, 100, 100)";
+    specSelectedAreaJs.style.backgroundColor = "rgb(100, 100, 100)";
     specSelectedJs.style.color = "#282828";
-    imgSpecPickerJs.style.visibility = "hidden";
+    $(imgSpecPickerJs).hide();
 }
 
 $(document).ready(function () {
@@ -409,97 +410,97 @@ $(document).ready(function () {
 
     $("#selectSpec")
         .mouseout(function () {
-            selectSpecById.style.height = "40px";
-            selectSpecById.style.borderRadius = "20px";
+            selectSpecByJs.style.height = "40px";
+            selectSpecByJs.style.borderRadius = "20px";
         })
         .mouseover(function () {
-            selectSpecById.style.borderRadius = "20px 20px 0px 0px";
+            selectSpecByJs.style.borderRadius = "20px 20px 0px 0px";
 
             switch (classSelected) {
                 case "Death Knight":
-                    selectSpecById.style.height = "168px";
+                    selectSpecByJs.style.height = "168px";
                     document.getElementById("spec1").textContent = "Blood";
                     document.getElementById("spec2").textContent = "Frost";
                     document.getElementById("spec3").textContent = "Unholy";
                     break;
                 case "Demon Hunter":
-                    selectSpecById.style.height = "126px";
+                    selectSpecByJs.style.height = "126px";
                     document.getElementById("spec1").textContent = "Havoc";
                     document.getElementById("spec2").textContent = "Vengeance";
                     break;
                 case "Druid":
-                    selectSpecById.style.height = "210px";
+                    selectSpecByJs.style.height = "210px";
                     document.getElementById("spec1").textContent = "Balance";
                     document.getElementById("spec2").textContent = "Feral";
                     document.getElementById("spec3").textContent = "Guardian";
                     document.getElementById("spec4").textContent = "Restoration";
                     break;
                 case "Evoker":
-                    selectSpecById.style.height = "126px";
+                    selectSpecByJs.style.height = "126px";
                     document.getElementById("spec1").textContent = "Devastation";
                     document.getElementById("spec2").textContent = "Preservation";
                     break;
                 case "Hunter":
-                    selectSpecById.style.height = "168px";
+                    selectSpecByJs.style.height = "168px";
                     document.getElementById("spec1").textContent = "Beast Mastery";
                     document.getElementById("spec2").textContent = "Marksmanship";
                     document.getElementById("spec3").textContent = "Survival";
                     break;
                 case "Mage":
-                    selectSpecById.style.height = "168px";
+                    selectSpecByJs.style.height = "168px";
                     document.getElementById("spec1").textContent = "Arcane";
                     document.getElementById("spec2").textContent = "Fire";
                     document.getElementById("spec3").textContent = "Frost";
                     break;
                 case "Monk":
-                    selectSpecById.style.height = "168px";
+                    selectSpecByJs.style.height = "168px";
                     document.getElementById("spec1").textContent = "Brewmaster";
                     document.getElementById("spec2").textContent = "Mistweaver";
                     document.getElementById("spec3").textContent = "Windwalker";
                     break;
                 case "Paladin":
-                    selectSpecById.style.height = "168px";
+                    selectSpecByJs.style.height = "168px";
                     document.getElementById("spec1").textContent = "Holy";
                     document.getElementById("spec2").textContent = "Protection";
                     document.getElementById("spec3").textContent = "Retribution";
                     break;
                 case "Priest":
-                    selectSpecById.style.height = "168px";
+                    selectSpecByJs.style.height = "168px";
                     document.getElementById("spec1").textContent = "Discipline";
                     document.getElementById("spec2").textContent = "Holy";
                     document.getElementById("spec3").textContent = "Shadow";
                     break;
                 case "Rogue":
-                    selectSpecById.style.height = "168px";
+                    selectSpecByJs.style.height = "168px";
                     document.getElementById("spec1").textContent = "Assassination";
                     document.getElementById("spec2").textContent = "Outlaw";
                     document.getElementById("spec3").textContent = "Subtlety";
                     break;
                 case "Shaman":
-                    selectSpecById.style.height = "168px";
+                    selectSpecByJs.style.height = "168px";
                     document.getElementById("spec1").textContent = "Elemental";
                     document.getElementById("spec2").textContent = "Enhancement";
                     document.getElementById("spec3").textContent = "Restoration";
                     break;
                 case "Warlock":
-                    selectSpecById.style.height = "168px";
+                    selectSpecByJs.style.height = "168px";
                     document.getElementById("spec1").textContent = "Affliction";
                     document.getElementById("spec2").textContent = "Demonology";
                     document.getElementById("spec3").textContent = "Destruction";
                     break;
                 case "Warrior":
-                    selectSpecById.style.height = "168px";
+                    selectSpecByJs.style.height = "168px";
                     document.getElementById("spec1").textContent = "Arms";
                     document.getElementById("spec2").textContent = "Fury";
                     document.getElementById("spec3").textContent = "Protection";
                     break;
                 default:
-                    selectSpecById.style.borderRadius = "20px";
+                    selectSpecByJs.style.borderRadius = "20px";
                     break;
             }
         });
 
-    $("#specSelectedId")
+    $("#specSelectedArea")
         .mouseout(function () {
             if (specSelected == "none"){
                 specSelectedJs.style.color = "#282828";
@@ -672,106 +673,119 @@ $(document).ready(function () {
             case "Death Knight":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Demon Hunter":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Druid":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Evoker":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Hunter":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Mage":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Monk":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Paladin":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Priest":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Rogue":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Shaman":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Warlock":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Warrior":
                 specSelected = spec1Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec1Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec1Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             default:
                 break;
@@ -783,106 +797,119 @@ $(document).ready(function () {
             case "Death Knight":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Demon Hunter":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Druid":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Evoker":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Hunter":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Mage":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Monk":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Paladin":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Priest":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Rogue":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Shaman":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Warlock":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Warrior":
                 specSelected = spec2Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec2Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec2Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             default:
                 break;
@@ -894,90 +921,101 @@ $(document).ready(function () {
             case "Death Knight":
                 specSelected = spec3Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec3Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Druid":
                 specSelected = spec3Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec3Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Hunter":
                 specSelected = spec3Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec3Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Mage":
                 specSelected = spec3Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec3Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Monk":
                 specSelected = spec3Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec3Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Paladin":
                 specSelected = spec3Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec3Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Priest":
                 specSelected = spec3Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec3Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Rogue":
                 specSelected = spec3Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec3Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Shaman":
                 specSelected = spec3Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec3Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Warlock":
                 specSelected = spec3Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec3Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/DPSSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             case "Warrior":
                 specSelected = spec3Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec3Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec3Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/TankSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             default:
                 break;
@@ -989,10 +1027,11 @@ $(document).ready(function () {
             case "Druid":
                 specSelected = spec4Js.innerText;
                 specSelectedJs.innerText = specSelected;
-                specSelectedJs.style.backgroundColor = spec4Js.style.backgroundColor;
+                specSelectedAreaJs.style.backgroundColor = spec4Js.style.backgroundColor;
                 specSelectedJs.style.color = "white";
                 imgSpecPickerJs.style.visibility = "visible";
                 imgSpecPickerJs.src = "./Images/Icons/RoleIcons/HealerSmall.png";
+                $(imgSpecPickerJs).show();
                 break;
             default:
                 break;

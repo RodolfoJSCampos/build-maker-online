@@ -192,9 +192,10 @@ img.dropSource{
 }
 
 .classPickerFrame {
-    display: flex;
-    max-width: 360px;
-    min-width: 360px;
+    display: inline-flex;
+    flex-basis: content;
+    max-width: 400px;
+    min-width: 404px;
     transition: 0.4s;
 }
 
@@ -233,7 +234,7 @@ img.dropSource{
     background-color: rgb(100, 100, 100);
     color: #282828;
     height: 40px;
-    min-width: 170px;
+    min-width: 192px;
     margin-top: 14px;
     margin-left: 10px;
     border-radius: 20px;
@@ -319,7 +320,7 @@ img.dropSource{
     width: 68px;
     text-align: center;
     border-radius: 37px;
-    margin-left: 143px;
+    margin-left: 165px;
     position: fixed;
     border: 3px solid;
     border-color: #aeaeae;
@@ -343,13 +344,16 @@ img.dropSource{
     display: none;
 }
 
+#specSelectedArea {
+    max-height: 42px;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+}
 
-#specPickerId {
-    z-index: 98;
-    margin-left: 220px;
-    margin-top: 22px;
-    position: fixed;
-    visibility: hidden;
+#imgSpecPickerId {
+    display: none;
     pointer-events: none;
 }
 
@@ -357,8 +361,8 @@ img.dropSource{
     background-color: rgb(100, 100, 100);
     color: #282828;
     height: 40px;
-    min-width: 170px;
-    margin-left: 180px;
+    min-width: 192px;
+    margin-left: 202px;
     margin-top: 14px;
     border-radius: 20px;
     text-align: center;
@@ -372,8 +376,10 @@ img.dropSource{
 }
 
 #specSelectedId {
-    padding-left: 18px;
+    padding-right: 10px;
     padding-top: 12px;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .specOption {
@@ -383,6 +389,11 @@ img.dropSource{
 }
 
 .specOption:hover {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black;
+    color: white;
+}
+
+#specSelectedArea:hover {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 0 0 1em black, 0 0 0.2em black;
     color: white;
 }
